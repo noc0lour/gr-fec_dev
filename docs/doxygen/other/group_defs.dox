@@ -1,0 +1,6 @@
+/*!
+ * \defgroup block GNU Radio FEC_DEV C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the FEC_DEV GNU Radio
+ *        module are listed here or in the subcategories below.
+ *
+ */
