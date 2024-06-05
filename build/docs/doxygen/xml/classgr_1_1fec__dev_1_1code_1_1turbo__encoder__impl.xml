@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::fec_dev::code::turbo_encoder_impl</compoundname>
+    <basecompoundref refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder" prot="public" virt="non-virtual">gr::fec_dev::code::turbo_encoder</basecompoundref>
+    <includes refid="turbo__encoder__impl_8h" local="no">turbo_encoder_impl.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1ad215c2821cc6398b5429911281942e1f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::fec_dev::code::turbo_encoder_impl::d_pack_input</definition>
+        <argsstring></argsstring>
+        <name>d_pack_input</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::d_pack_input</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="28" column="14" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a97a581e398cfd342877b41d09c695fa5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::fec_dev::code::turbo_encoder_impl::d_packed_bits_output</definition>
+        <argsstring></argsstring>
+        <name>d_packed_bits_output</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::d_packed_bits_output</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="29" column="14" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a3b11269f5d6e27b99cb57ddaee42bd6e" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int gr::fec_dev::code::turbo_encoder_impl::d_max_frame_size</definition>
+        <argsstring></argsstring>
+        <name>d_max_frame_size</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::d_max_frame_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="31" column="22" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a4d385d3bd1ea55b6ffda72fcc47e9cd6" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int gr::fec_dev::code::turbo_encoder_impl::d_frame_size</definition>
+        <argsstring></argsstring>
+        <name>d_frame_size</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::d_frame_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="32" column="22" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1acb772eec4b707f185cd58137ce357219" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::fec_dev::code::turbo_encoder_impl::generic_work</definition>
+        <argsstring>(const void *inbuffer, void *outbuffer) override</argsstring>
+        <name>generic_work</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::generic_work</qualifiedname>
+        <param>
+          <type>const void *</type>
+          <declname>inbuffer</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>outbuffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="23" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a6fb99242cdd01f3ff1c666ceaaa2f708" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::fec_dev::code::turbo_encoder_impl::get_output_size</definition>
+        <argsstring>() override</argsstring>
+        <name>get_output_size</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::get_output_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="24" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a8a2fa6cbe7e7846b465d8dbebcf84375" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::fec_dev::code::turbo_encoder_impl::get_input_size</definition>
+        <argsstring>() override</argsstring>
+        <name>get_input_size</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::get_input_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="25" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1ab37e7dc07063b3068cdc1bed63dd0573" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * gr::fec_dev::code::turbo_encoder_impl::get_input_conversion</definition>
+        <argsstring>() override</argsstring>
+        <name>get_input_conversion</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::get_input_conversion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="26" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a7b269b69560097a63b2cf1a0200f81a5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * gr::fec_dev::code::turbo_encoder_impl::get_output_conversion</definition>
+        <argsstring>() override</argsstring>
+        <name>get_output_conversion</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::get_output_conversion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="27" column="20"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a5dbbfc4fd81ae9cd2c969f141f0f9e29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::fec_dev::code::turbo_encoder_impl::turbo_encoder_impl</definition>
+        <argsstring>(int frame_size, bool pack=false, bool packed_bits=false)</argsstring>
+        <name>turbo_encoder_impl</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::turbo_encoder_impl</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>frame_size</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>pack</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>packed_bits</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="35" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1ab579b3608bf7d98cb10b309b81488327" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::fec_dev::code::turbo_encoder_impl::~turbo_encoder_impl</definition>
+        <argsstring>() override</argsstring>
+        <name>~turbo_encoder_impl</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::~turbo_encoder_impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="36" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a037388db58f73826ff161198e40b71b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool gr::fec_dev::code::turbo_encoder_impl::set_frame_size</definition>
+        <argsstring>(unsigned int frame_size) override</argsstring>
+        <name>set_frame_size</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::set_frame_size</qualifiedname>
+        <reimplements refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1ac8046a31a9f15443449d418c34f7352c">set_frame_size</reimplements>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the uncoded frame size to <computeroutput>frame_size</computeroutput>. If <computeroutput>frame_size</computeroutput> is greater than the value given to the constructor, the frame size will be capped by that initial value and this function will return false. Otherwise, it returns true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="38" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a76b2da3c92b87708875b264f81faecf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double gr::fec_dev::code::turbo_encoder_impl::rate</definition>
+        <argsstring>() override</argsstring>
+        <name>rate</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder_impl::rate</qualifiedname>
+        <reimplements refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1a681405182c81cdd40431684754f95225">rate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the coding rate of this encoder (it will always be 1). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="39" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>fec::generic_encoder</label>
+      </node>
+      <node id="2">
+        <label>gr::fec_dev::code::turbo_encoder</label>
+        <link refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::fec_dev::code::turbo_encoder_impl</label>
+        <link refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>fec::generic_encoder</label>
+      </node>
+      <node id="2">
+        <label>gr::fec_dev::code::turbo_encoder</label>
+        <link refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::fec_dev::code::turbo_encoder_impl</label>
+        <link refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="19" column="7" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="20" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a4d385d3bd1ea55b6ffda72fcc47e9cd6" prot="private" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>d_frame_size</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a3b11269f5d6e27b99cb57ddaee42bd6e" prot="private" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>d_max_frame_size</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1ad215c2821cc6398b5429911281942e1f" prot="private" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>d_pack_input</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a97a581e398cfd342877b41d09c695fa5" prot="private" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>d_packed_bits_output</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1acb772eec4b707f185cd58137ce357219" prot="private" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>generic_work</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1ab37e7dc07063b3068cdc1bed63dd0573" prot="private" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>get_input_conversion</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a8a2fa6cbe7e7846b465d8dbebcf84375" prot="private" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>get_input_size</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a7b269b69560097a63b2cf1a0200f81a5" prot="private" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>get_output_conversion</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a6fb99242cdd01f3ff1c666ceaaa2f708" prot="private" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>get_output_size</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1a77a2395ee1e3234e0e7987d634a81a44" prot="public" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a76b2da3c92b87708875b264f81faecf0" prot="public" virt="virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>rate</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a037388db58f73826ff161198e40b71b5" prot="public" virt="virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>set_frame_size</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a5dbbfc4fd81ae9cd2c969f141f0f9e29" prot="public" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>turbo_encoder_impl</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1ab579b3608bf7d98cb10b309b81488327" prot="public" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder_impl</scope><name>~turbo_encoder_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

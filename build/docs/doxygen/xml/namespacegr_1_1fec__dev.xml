@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="namespacegr_1_1fec__dev" kind="namespace" language="C++">
+    <compoundname>gr::fec_dev</compoundname>
+    <innernamespace refid="namespacegr_1_1fec__dev_1_1code">gr::fec_dev::code</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="18" column="3"/>
+  </compounddef>
+</doxygen>

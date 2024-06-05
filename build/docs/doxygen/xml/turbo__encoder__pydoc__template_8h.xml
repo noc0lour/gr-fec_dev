@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="turbo__encoder__pydoc__template_8h" kind="file" language="C++">
+    <compoundname>turbo_encoder_pydoc_template.h</compoundname>
+    <includes local="yes">pydoc_macros.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>turbo_encoder_pydoc_template.h</label>
+        <link refid="turbo__encoder__pydoc__template_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>pydoc_macros.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="turbo__encoder__pydoc__template_8h_1a74021f021dcdfbb22891787b79c5529d" prot="public" static="no">
+        <name>D</name>
+        <param><defname>...</defname></param>
+        <initializer><ref refid="build_2python_2fec__dev_2bindings_2pydoc__macros_8h_1a4e578031ec998eaeb933d5caa6a7d28a" kindref="member">DOC</ref>(gr, fec_dev, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" line="10" column="10" bodyfile="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="turbo__encoder__pydoc__template_8h_1ac3266a79c0a3e002ccba2b1235d5bf2e" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_fec_dev_code_turbo_encoder</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_fec_dev_code_turbo_encoder</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" line="18" column="19" bodyfile="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="turbo__encoder__pydoc__template_8h_1a94ca8bb2809bf1109fe2abc80e6bce67" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_fec_dev_code_turbo_encoder_turbo_encoder_0</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_fec_dev_code_turbo_encoder_turbo_encoder_0</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" line="21" column="19" bodyfile="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="turbo__encoder__pydoc__template_8h_1aeab333d1eef5ac35ec4c461d08034722" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_fec_dev_code_turbo_encoder_turbo_encoder_1</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_fec_dev_code_turbo_encoder_turbo_encoder_1</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" line="24" column="19" bodyfile="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="turbo__encoder__pydoc__template_8h_1a64e0e3d83f29456a254ffbb55605ff63" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_fec_dev_code_turbo_encoder_make</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_fec_dev_code_turbo_encoder_make</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" line="27" column="19" bodyfile="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="turbo__encoder__pydoc__template_8h_1a7f1d0b6a62b1a6845383358638ac1aae" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_fec_dev_code_turbo_encoder_set_frame_size</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_fec_dev_code_turbo_encoder_set_frame_size</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" line="30" column="19" bodyfile="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="turbo__encoder__pydoc__template_8h_1a5594d53d1e873220cf246eba5c718cd3" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_fec_dev_code_turbo_encoder_rate</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_fec_dev_code_turbo_encoder_rate</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" line="33" column="19" bodyfile="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/kmcomer/gr-fec_dev/python/fec_dev/bindings/docstrings/turbo_encoder_pydoc_template.h"/>
+  </compounddef>
+</doxygen>

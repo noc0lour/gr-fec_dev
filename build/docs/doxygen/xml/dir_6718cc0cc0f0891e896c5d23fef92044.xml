@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="dir_6718cc0cc0f0891e896c5d23fef92044" kind="dir">
+    <compoundname>bindings</compoundname>
+    <innerfile refid="build_2python_2fec__dev_2bindings_2pydoc__macros_8h">build/python/fec_dev/bindings/pydoc_macros.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/kmcomer/gr-fec_dev/build/python/fec_dev/bindings/"/>
+  </compounddef>
+</doxygen>

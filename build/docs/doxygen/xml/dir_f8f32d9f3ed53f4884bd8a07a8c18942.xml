@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="dir_f8f32d9f3ed53f4884bd8a07a8c18942" kind="dir">
+    <compoundname>fec_dev</compoundname>
+    <innerdir refid="dir_390e2edbda61c5cd906660250b1ece15">bindings</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/kmcomer/gr-fec_dev/python/fec_dev/"/>
+  </compounddef>
+</doxygen>

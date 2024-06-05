@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::fec_dev::code::turbo_encoder</compoundname>
+    <basecompoundref prot="public" virt="virtual">fec::generic_encoder</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl" prot="public" virt="non-virtual">gr::fec_dev::code::turbo_encoder_impl</derivedcompoundref>
+    <includes refid="turbo__encoder_8h" local="no">turbo_encoder.h</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1a77a2395ee1e3234e0e7987d634a81a44" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic_encoder::sptr</type>
+        <definition>static generic_encoder::sptr gr::fec_dev::code::turbo_encoder::make</definition>
+        <argsstring>(int frame_size, bool pack=false, bool packed_bits=false)</argsstring>
+        <name>make</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder::make</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>frame_size</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>pack</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>packed_bits</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Build a turbo encoding FEC API object.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bits per frame. If using in the tagged stream style, this is the maximum allowable number of bits per frame. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pack</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Determines how to handle the input data stream as packed or unpacked bits. If set to True, the encoder&apos;s get_input_conversion will be set to &apos;pack&apos;, meaning that the data must be packed before being sent to this encoder. Generally handled through an extended encoder interface. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>packed_bits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Determines how the output data stream is handled. If set to True, the encoder&apos;s get_output_conversion returns &apos;packed_bits&apos;, meaning that the output data of the encoder is packed and should be unpacked. Generally handled through an extended encoder interface. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="53" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1ac8046a31a9f15443449d418c34f7352c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>bool gr::fec_dev::code::turbo_encoder::set_frame_size</definition>
+        <argsstring>(unsigned int frame_size) override=0</argsstring>
+        <name>set_frame_size</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder::set_frame_size</qualifiedname>
+        <reimplementedby refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a037388db58f73826ff161198e40b71b5">set_frame_size</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the uncoded frame size to <computeroutput>frame_size</computeroutput>. If <computeroutput>frame_size</computeroutput> is greater than the value given to the constructor, the frame size will be capped by that initial value and this function will return false. Otherwise, it returns true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="62" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1a681405182c81cdd40431684754f95225" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>double gr::fec_dev::code::turbo_encoder::rate</definition>
+        <argsstring>() override=0</argsstring>
+        <name>rate</name>
+        <qualifiedname>gr::fec_dev::code::turbo_encoder::rate</qualifiedname>
+        <reimplementedby refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a76b2da3c92b87708875b264f81faecf0">rate</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the coding rate of this encoder (it will always be 1). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="67" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Turbo Encoding class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A turbo encoder class that simply passes the input to the output. It is meant to allow us to easily use the FEC API encoder and decoder blocks in an application with no coding. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>fec::generic_encoder</label>
+      </node>
+      <node id="1">
+        <label>gr::fec_dev::code::turbo_encoder</label>
+        <link refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gr::fec_dev::code::turbo_encoder_impl</label>
+        <link refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>fec::generic_encoder</label>
+      </node>
+      <node id="1">
+        <label>gr::fec_dev::code::turbo_encoder</label>
+        <link refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="30" column="7" bodyfile="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" bodystart="31" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1a77a2395ee1e3234e0e7987d634a81a44" prot="public" virt="non-virtual"><scope>gr::fec_dev::code::turbo_encoder</scope><name>make</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1a681405182c81cdd40431684754f95225" prot="public" virt="pure-virtual"><scope>gr::fec_dev::code::turbo_encoder</scope><name>rate</name></member>
+      <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1ac8046a31a9f15443449d418c34f7352c" prot="public" virt="pure-virtual"><scope>gr::fec_dev::code::turbo_encoder</scope><name>set_frame_size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
