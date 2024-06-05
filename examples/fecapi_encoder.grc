@@ -349,7 +349,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    encoder_list: enc_dummy
+    encoder_list: enc_turbo
     maxoutbuf: '0'
     minoutbuf: '0'
     puncpat: puncpat

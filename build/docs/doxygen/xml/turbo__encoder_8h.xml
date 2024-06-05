@@ -51,10 +51,9 @@
         <link refid="turbo__encoder__impl_8h"/>
       </node>
     </invincdepgraph>
-    <innerclass refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder" prot="public">gr::fec_dev::code::turbo_encoder</innerclass>
+    <innerclass refid="classgr_1_1fec__dev_1_1turbo__encoder" prot="public">gr::fec_dev::turbo_encoder</innerclass>
     <innernamespace refid="namespacegr">gr</innernamespace>
     <innernamespace refid="namespacegr_1_1fec__dev">gr::fec_dev</innernamespace>
-    <innernamespace refid="namespacegr_1_1fec__dev_1_1code">gr::fec_dev::code</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

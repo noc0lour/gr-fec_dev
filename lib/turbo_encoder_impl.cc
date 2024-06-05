@@ -15,7 +15,6 @@
 
 namespace gr {
   namespace fec_dev {
-    namespace code {
 
       fec::generic_encoder::sptr turbo_encoder::make(int frame_size, bool pack, bool packed_bits)
       {
@@ -82,6 +81,5 @@ namespace gr {
           memcpy(out, in, d_frame_size * sizeof(char));
       }
 
-    }
   } /* namespace fec_dev */
 } /* namespace gr */

@@ -16,7 +16,6 @@
 
 namespace gr {
   namespace fec_dev {
-    namespace code {
 
       /*!
       * \brief Turbo Encoding class.
@@ -67,7 +66,6 @@ namespace gr {
           double rate() override = 0;
       };
     
-    }
   } // namespace fec_dev
 } // namespace gr
 

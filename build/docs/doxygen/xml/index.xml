@@ -1,32 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.11.0" xml:lang="en-US">
-  <compound refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder" kind="class"><name>gr::fec_dev::code::turbo_encoder</name>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1a77a2395ee1e3234e0e7987d634a81a44" kind="function"><name>make</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1ac8046a31a9f15443449d418c34f7352c" kind="function"><name>set_frame_size</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder_1a681405182c81cdd40431684754f95225" kind="function"><name>rate</name></member>
+  <compound refid="classgr_1_1fec__dev_1_1turbo__encoder" kind="class"><name>gr::fec_dev::turbo_encoder</name>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder_1a11efa5506b2bc20a77d3faf2f0d1d601" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder_1a0e0a074375d2fbbb5397a2333abfd6c1" kind="function"><name>set_frame_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder_1aa539e60dfc5aaa6c1bb82804efda0778" kind="function"><name>rate</name></member>
   </compound>
-  <compound refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl" kind="class"><name>gr::fec_dev::code::turbo_encoder_impl</name>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1ad215c2821cc6398b5429911281942e1f" kind="variable"><name>d_pack_input</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a97a581e398cfd342877b41d09c695fa5" kind="variable"><name>d_packed_bits_output</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a3b11269f5d6e27b99cb57ddaee42bd6e" kind="variable"><name>d_max_frame_size</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a4d385d3bd1ea55b6ffda72fcc47e9cd6" kind="variable"><name>d_frame_size</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1acb772eec4b707f185cd58137ce357219" kind="function"><name>generic_work</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a6fb99242cdd01f3ff1c666ceaaa2f708" kind="function"><name>get_output_size</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a8a2fa6cbe7e7846b465d8dbebcf84375" kind="function"><name>get_input_size</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1ab37e7dc07063b3068cdc1bed63dd0573" kind="function"><name>get_input_conversion</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a7b269b69560097a63b2cf1a0200f81a5" kind="function"><name>get_output_conversion</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a5dbbfc4fd81ae9cd2c969f141f0f9e29" kind="function"><name>turbo_encoder_impl</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1ab579b3608bf7d98cb10b309b81488327" kind="function"><name>~turbo_encoder_impl</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a037388db58f73826ff161198e40b71b5" kind="function"><name>set_frame_size</name></member>
-    <member refid="classgr_1_1fec__dev_1_1code_1_1turbo__encoder__impl_1a76b2da3c92b87708875b264f81faecf0" kind="function"><name>rate</name></member>
+  <compound refid="classgr_1_1fec__dev_1_1turbo__encoder__impl" kind="class"><name>gr::fec_dev::turbo_encoder_impl</name>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a6e01377fea9187fbaea85ec2c2ee10df" kind="variable"><name>d_pack_input</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1aec6c399d5573eb94174a8f84d53bf93e" kind="variable"><name>d_packed_bits_output</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a6439b9c4c70617aec6865c3aecfcf39f" kind="variable"><name>d_max_frame_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1acae1c107acd60f4e1e32428c184b1789" kind="variable"><name>d_frame_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1ac06c8135e0db346bf16a49f2a6fa26ff" kind="function"><name>generic_work</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1afe8dedeeeb494c81bd49e053e84bf83f" kind="function"><name>get_output_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a8ffc13d2f5775f41e4c640338658708d" kind="function"><name>get_input_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a5257026fd487f8805e8efe1b51fe6491" kind="function"><name>get_input_conversion</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a042bb6c908aaf742bffcdec3ca33e8ed" kind="function"><name>get_output_conversion</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1ae7aa5d94f2f14ae772cb3b246be7df8f" kind="function"><name>turbo_encoder_impl</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a0c9aaa27033b549615d37c0279d8b2c9" kind="function"><name>~turbo_encoder_impl</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1af9d53707e81036b24afc1d4e9bc72a30" kind="function"><name>set_frame_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a5c5257153f1485f9965d40a7424a2c0d" kind="function"><name>rate</name></member>
   </compound>
   <compound refid="namespacefec" kind="namespace"><name>fec</name>
   </compound>
   <compound refid="namespacegr" kind="namespace"><name>gr</name>
   </compound>
   <compound refid="namespacegr_1_1fec__dev" kind="namespace"><name>gr::fec_dev</name>
-  </compound>
-  <compound refid="namespacegr_1_1fec__dev_1_1code" kind="namespace"><name>gr::fec_dev::code</name>
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
   </compound>
@@ -73,12 +71,12 @@
   </compound>
   <compound refid="turbo__encoder__pydoc__template_8h" kind="file"><name>turbo_encoder_pydoc_template.h</name>
     <member refid="turbo__encoder__pydoc__template_8h_1a74021f021dcdfbb22891787b79c5529d" kind="define"><name>D</name></member>
-    <member refid="turbo__encoder__pydoc__template_8h_1ac3266a79c0a3e002ccba2b1235d5bf2e" kind="variable"><name>__doc_gr_fec_dev_code_turbo_encoder</name></member>
-    <member refid="turbo__encoder__pydoc__template_8h_1a94ca8bb2809bf1109fe2abc80e6bce67" kind="variable"><name>__doc_gr_fec_dev_code_turbo_encoder_turbo_encoder_0</name></member>
-    <member refid="turbo__encoder__pydoc__template_8h_1aeab333d1eef5ac35ec4c461d08034722" kind="variable"><name>__doc_gr_fec_dev_code_turbo_encoder_turbo_encoder_1</name></member>
-    <member refid="turbo__encoder__pydoc__template_8h_1a64e0e3d83f29456a254ffbb55605ff63" kind="variable"><name>__doc_gr_fec_dev_code_turbo_encoder_make</name></member>
-    <member refid="turbo__encoder__pydoc__template_8h_1a7f1d0b6a62b1a6845383358638ac1aae" kind="variable"><name>__doc_gr_fec_dev_code_turbo_encoder_set_frame_size</name></member>
-    <member refid="turbo__encoder__pydoc__template_8h_1a5594d53d1e873220cf246eba5c718cd3" kind="variable"><name>__doc_gr_fec_dev_code_turbo_encoder_rate</name></member>
+    <member refid="turbo__encoder__pydoc__template_8h_1a9515e2c1c141717bb58e1c63a11b43c0" kind="variable"><name>__doc_gr_fec_dev_turbo_encoder</name></member>
+    <member refid="turbo__encoder__pydoc__template_8h_1a035915b60a483d3195af32f6a2d112d6" kind="variable"><name>__doc_gr_fec_dev_turbo_encoder_turbo_encoder_0</name></member>
+    <member refid="turbo__encoder__pydoc__template_8h_1a4559b08a52251287d976c337c65637f1" kind="variable"><name>__doc_gr_fec_dev_turbo_encoder_turbo_encoder_1</name></member>
+    <member refid="turbo__encoder__pydoc__template_8h_1abc8d0149aa87c3e05365db26370770dd" kind="variable"><name>__doc_gr_fec_dev_turbo_encoder_make</name></member>
+    <member refid="turbo__encoder__pydoc__template_8h_1a4f37379c34d9456a994b799103635302" kind="variable"><name>__doc_gr_fec_dev_turbo_encoder_set_frame_size</name></member>
+    <member refid="turbo__encoder__pydoc__template_8h_1a337b0208b79c0de21467c67ac76b0b0f" kind="variable"><name>__doc_gr_fec_dev_turbo_encoder_rate</name></member>
   </compound>
   <compound refid="group__block" kind="group"><name>block</name>
   </compound>

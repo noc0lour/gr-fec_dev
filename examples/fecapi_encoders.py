@@ -12,6 +12,7 @@ from PyQt5 import Qt
 from gnuradio import qtgui
 from gnuradio import blocks
 from gnuradio import fec
+from gnuradio import fec_dev
 from gnuradio import gr
 from gnuradio.filter import firdes
 from gnuradio.fft import window
@@ -70,6 +71,7 @@ class fecapi_encoders(gr.top_block, Qt.QWidget):
         self.polys = polys = [109, 79]
         self.k = k = 7
         self.samp_rate = samp_rate = 50000
+        self.enc_turbo = enc_turbo = fec_dev.turbo_encoder_make(480)
         self.enc_rep = enc_rep = list(map((lambda a: fec.repetition_encoder_make((frame_size*8),3)), range(0,1)))
         self.enc_dummy = enc_dummy = fec.dummy_encoder_make((frame_size*8))
         self.enc_ccsds = enc_ccsds = fec.ccsds_encoder_make((frame_size*8),0, fec.CC_TERMINATED)
@@ -127,7 +129,7 @@ class fecapi_encoders(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_0_1_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0_1.qwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_0_1_win)
-        self.fec_extended_encoder_0_0_0 = fec.extended_encoder(encoder_obj_list=enc_dummy, threading= None, puncpat=puncpat)
+        self.fec_extended_encoder_0_0_0 = fec.extended_encoder(encoder_obj_list=enc_turbo, threading= None, puncpat=puncpat)
         self.blocks_vector_source_x_0_1_0 = blocks.vector_source_b((frame_size//15)*[0, 0, 1, 0, 3, 0, 7, 0, 15, 0, 31, 0, 63, 0, 127], True, 1, [])
         self.blocks_unpack_k_bits_bb_0 = blocks.unpack_k_bits_bb(8)
         self.blocks_throttle2_0 = blocks.throttle( gr.sizeof_char*1, samp_rate, True, 0 if "auto" == "auto" else max( int(float(0.1) * samp_rate) if "auto" == "time" else int(0.1), 1) )
@@ -190,6 +192,12 @@ class fecapi_encoders(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate
         self.blocks_throttle2_0.set_sample_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_0_1.set_samp_rate(self.samp_rate)
+
+    def get_enc_turbo(self):
+        return self.enc_turbo
+
+    def set_enc_turbo(self, enc_turbo):
+        self.enc_turbo = enc_turbo
 
     def get_enc_rep(self):
         return self.enc_rep

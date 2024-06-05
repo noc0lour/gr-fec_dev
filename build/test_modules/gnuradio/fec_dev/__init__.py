@@ -19,5 +19,7 @@ try:
 except ModuleNotFoundError:
     pass
 
-# import any pure python here
-#
+# Pybind cannot bind constructors to make functions that return a different type
+# Remap make functions to __init__ here
+turbo_encoder.__init__ = turbo_encoder.make
+turbo_encoder_make = turbo_encoder.make

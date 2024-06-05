@@ -2,7 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
   <compounddef id="namespacegr_1_1fec__dev" kind="namespace" language="C++">
     <compoundname>gr::fec_dev</compoundname>
-    <innernamespace refid="namespacegr_1_1fec__dev_1_1code">gr::fec_dev::code</innernamespace>
+    <innerclass refid="classgr_1_1fec__dev_1_1turbo__encoder" prot="public">gr::fec_dev::turbo_encoder</innerclass>
+    <innerclass refid="classgr_1_1fec__dev_1_1turbo__encoder__impl" prot="public">gr::fec_dev::turbo_encoder_impl</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

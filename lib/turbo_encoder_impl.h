@@ -14,8 +14,7 @@
 
 namespace gr {
   namespace fec_dev {
-    namespace code {
-
+    
       class FEC_API turbo_encoder_impl : public turbo_encoder
       {
       private:
@@ -39,7 +38,6 @@ namespace gr {
         double rate() override;
       };
 
-    }
   } // namespace fec_dev
 } // namespace gr
 

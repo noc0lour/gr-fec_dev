@@ -79,72 +79,68 @@ $(function(){initNavTree('turbo__encoder_8h_source.html',''); initResizable(true
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespacegr.html">   17</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacegr.html">gr</a> {</div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespacegr_1_1fec__dev.html">   18</a></span>  <span class="keyword">namespace </span>fec_dev {</div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespacegr_1_1fec__dev_1_1code.html">   19</a></span>    <span class="keyword">namespace </span>code {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"></span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">      /*!</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">      * \brief Turbo Encoding class.</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">      * \ingroup error_coding_blk</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">      *</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">      * \details</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">      * A turbo encoder class that simply passes the input to the</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">      * output. It is meant to allow us to easily use the FEC API</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">      * encoder and decoder blocks in an application with no coding.</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">      */</span></div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html">   30</a></span>      <span class="keyword">class </span>FEC_API <a class="code hl_class" href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html">turbo_encoder</a> : <span class="keyword">virtual</span> <span class="keyword">public</span> fec::generic_encoder</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      <span class="keyword">public</span>:<span class="comment"></span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">          /*!</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">          * Build a turbo encoding FEC API object.</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">          *</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">          * \param frame_size Number of bits per frame. If using in the</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">          *        tagged stream style, this is the maximum allowable</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">          *        number of bits per frame.</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">          * \param pack Determines how to handle the input data stream</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">          *        as packed or unpacked bits. If set to True, the</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">          *        encoder&#39;s get_input_conversion will be set to</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">          *        &#39;pack&#39;, meaning that the data must be packed before</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">          *        being sent to this encoder. Generally handled</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">          *        through an extended encoder interface.</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">          * \param packed_bits Determines how the output data stream is</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">          *        handled. If set to True, the encoder&#39;s</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">          *        get_output_conversion returns &#39;packed_bits&#39;, meaning</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">          *        that the output data of the encoder is packed and</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">          *        should be unpacked. Generally handled through an</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">          *        extended encoder interface.</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">          */</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          <span class="keyword">static</span> generic_encoder::sptr</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html#a77a2395ee1e3234e0e7987d634a81a44">   53</a></span>          <a class="code hl_function" href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html#a77a2395ee1e3234e0e7987d634a81a44">make</a>(<span class="keywordtype">int</span> frame_size, <span class="keywordtype">bool</span> pack = <span class="keyword">false</span>, <span class="keywordtype">bool</span> packed_bits = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">          /*!</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">          * Sets the uncoded frame size to \p frame_size. If \p</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">          * frame_size is greater than the value given to the</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">          * constructor, the frame size will be capped by that initial</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">          * value and this function will return false. Otherwise, it</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">          * returns true.</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">          */</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html#ac8046a31a9f15443449d418c34f7352c">   62</a></span>          <span class="keywordtype">bool</span> <a class="code hl_function" href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html#ac8046a31a9f15443449d418c34f7352c">set_frame_size</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frame_size) <span class="keyword">override</span> = 0;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"></span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">          /*!</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">          * Returns the coding rate of this encoder (it will always be 1).</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">          */</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html#a681405182c81cdd40431684754f95225">   67</a></span>          <span class="keywordtype">double</span> <a class="code hl_function" href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html#a681405182c81cdd40431684754f95225">rate</a>() <span class="keyword">override</span> = 0;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      };</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"></span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">      /*!</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">      * \brief Turbo Encoding class.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">      * \ingroup error_coding_blk</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">      *</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">      * \details</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">      * A turbo encoder class that simply passes the input to the</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">      * output. It is meant to allow us to easily use the FEC API</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">      * encoder and decoder blocks in an application with no coding.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">      */</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classgr_1_1fec__dev_1_1turbo__encoder.html">   29</a></span>      <span class="keyword">class </span>FEC_API <a class="code hl_class" href="classgr_1_1fec__dev_1_1turbo__encoder.html">turbo_encoder</a> : <span class="keyword">virtual</span> <span class="keyword">public</span> fec::generic_encoder</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      <span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">          /*!</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">          * Build a turbo encoding FEC API object.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">          *</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">          * \param frame_size Number of bits per frame. If using in the</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">          *        tagged stream style, this is the maximum allowable</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">          *        number of bits per frame.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">          * \param pack Determines how to handle the input data stream</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">          *        as packed or unpacked bits. If set to True, the</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">          *        encoder&#39;s get_input_conversion will be set to</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">          *        &#39;pack&#39;, meaning that the data must be packed before</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">          *        being sent to this encoder. Generally handled</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">          *        through an extended encoder interface.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">          * \param packed_bits Determines how the output data stream is</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">          *        handled. If set to True, the encoder&#39;s</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">          *        get_output_conversion returns &#39;packed_bits&#39;, meaning</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">          *        that the output data of the encoder is packed and</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">          *        should be unpacked. Generally handled through an</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">          *        extended encoder interface.</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">          */</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          <span class="keyword">static</span> generic_encoder::sptr</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classgr_1_1fec__dev_1_1turbo__encoder.html#a11efa5506b2bc20a77d3faf2f0d1d601">   52</a></span>          <a class="code hl_function" href="classgr_1_1fec__dev_1_1turbo__encoder.html#a11efa5506b2bc20a77d3faf2f0d1d601">make</a>(<span class="keywordtype">int</span> frame_size, <span class="keywordtype">bool</span> pack = <span class="keyword">false</span>, <span class="keywordtype">bool</span> packed_bits = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"></span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">          /*!</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">          * Sets the uncoded frame size to \p frame_size. If \p</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">          * frame_size is greater than the value given to the</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">          * constructor, the frame size will be capped by that initial</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">          * value and this function will return false. Otherwise, it</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">          * returns true.</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">          */</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classgr_1_1fec__dev_1_1turbo__encoder.html#a0e0a074375d2fbbb5397a2333abfd6c1">   61</a></span>          <span class="keywordtype">bool</span> <a class="code hl_function" href="classgr_1_1fec__dev_1_1turbo__encoder.html#a0e0a074375d2fbbb5397a2333abfd6c1">set_frame_size</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frame_size) <span class="keyword">override</span> = 0;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"></span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">          /*!</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">          * Returns the coding rate of this encoder (it will always be 1).</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">          */</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classgr_1_1fec__dev_1_1turbo__encoder.html#aa539e60dfc5aaa6c1bb82804efda0778">   66</a></span>          <span class="keywordtype">double</span> <a class="code hl_function" href="classgr_1_1fec__dev_1_1turbo__encoder.html#aa539e60dfc5aaa6c1bb82804efda0778">rate</a>() <span class="keyword">override</span> = 0;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      };</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  } <span class="comment">// namespace fec_dev</span></div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  } <span class="comment">// namespace fec_dev</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>} <span class="comment">// namespace gr</span></div>
 </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>} <span class="comment">// namespace gr</span></div>
-</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">/* INCLUDED_FEC_DEV_TURBO_ENCODER_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclassgr_1_1fec__dev_1_1code_1_1turbo__encoder_html"><div class="ttname"><a href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html">gr::fec_dev::code::turbo_encoder</a></div><div class="ttdoc">Turbo Encoding class.</div><div class="ttdef"><b>Definition</b> turbo_encoder.h:31</div></div>
-<div class="ttc" id="aclassgr_1_1fec__dev_1_1code_1_1turbo__encoder_html_a681405182c81cdd40431684754f95225"><div class="ttname"><a href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html#a681405182c81cdd40431684754f95225">gr::fec_dev::code::turbo_encoder::rate</a></div><div class="ttdeci">double rate() override=0</div></div>
-<div class="ttc" id="aclassgr_1_1fec__dev_1_1code_1_1turbo__encoder_html_a77a2395ee1e3234e0e7987d634a81a44"><div class="ttname"><a href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html#a77a2395ee1e3234e0e7987d634a81a44">gr::fec_dev::code::turbo_encoder::make</a></div><div class="ttdeci">static generic_encoder::sptr make(int frame_size, bool pack=false, bool packed_bits=false)</div></div>
-<div class="ttc" id="aclassgr_1_1fec__dev_1_1code_1_1turbo__encoder_html_ac8046a31a9f15443449d418c34f7352c"><div class="ttname"><a href="classgr_1_1fec__dev_1_1code_1_1turbo__encoder.html#ac8046a31a9f15443449d418c34f7352c">gr::fec_dev::code::turbo_encoder::set_frame_size</a></div><div class="ttdeci">bool set_frame_size(unsigned int frame_size) override=0</div></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif </span><span class="comment">/* INCLUDED_FEC_DEV_TURBO_ENCODER_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclassgr_1_1fec__dev_1_1turbo__encoder_html"><div class="ttname"><a href="classgr_1_1fec__dev_1_1turbo__encoder.html">gr::fec_dev::turbo_encoder</a></div><div class="ttdoc">Turbo Encoding class.</div><div class="ttdef"><b>Definition</b> turbo_encoder.h:30</div></div>
+<div class="ttc" id="aclassgr_1_1fec__dev_1_1turbo__encoder_html_a0e0a074375d2fbbb5397a2333abfd6c1"><div class="ttname"><a href="classgr_1_1fec__dev_1_1turbo__encoder.html#a0e0a074375d2fbbb5397a2333abfd6c1">gr::fec_dev::turbo_encoder::set_frame_size</a></div><div class="ttdeci">bool set_frame_size(unsigned int frame_size) override=0</div></div>
+<div class="ttc" id="aclassgr_1_1fec__dev_1_1turbo__encoder_html_a11efa5506b2bc20a77d3faf2f0d1d601"><div class="ttname"><a href="classgr_1_1fec__dev_1_1turbo__encoder.html#a11efa5506b2bc20a77d3faf2f0d1d601">gr::fec_dev::turbo_encoder::make</a></div><div class="ttdeci">static generic_encoder::sptr make(int frame_size, bool pack=false, bool packed_bits=false)</div></div>
+<div class="ttc" id="aclassgr_1_1fec__dev_1_1turbo__encoder_html_aa539e60dfc5aaa6c1bb82804efda0778"><div class="ttname"><a href="classgr_1_1fec__dev_1_1turbo__encoder.html#aa539e60dfc5aaa6c1bb82804efda0778">gr::fec_dev::turbo_encoder::rate</a></div><div class="ttdeci">double rate() override=0</div></div>
 <div class="ttc" id="anamespacegr_html"><div class="ttname"><a href="namespacegr.html">gr</a></div><div class="ttdef"><b>Definition</b> turbo_encoder.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

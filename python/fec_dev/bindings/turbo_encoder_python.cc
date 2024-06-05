@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(turbo_encoder.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(8ef9724c284fda877194a2e1ecb08160)                     */
+/* BINDTOOL_HEADER_FILE_HASH(c5e51d355f906665892488059ddc87fd)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -30,36 +30,33 @@ namespace py = pybind11;
 void bind_turbo_encoder(py::module& m)
 {
 
-
-    py::module m_code = m.def_submodule("code");
-
-    using turbo_encoder = ::gr::fec_dev::code::turbo_encoder;
+    using turbo_encoder = ::gr::fec_dev::turbo_encoder;
 
 
     py::class_<turbo_encoder, gr::fec::generic_encoder, std::shared_ptr<turbo_encoder>>(
-        m_code, "turbo_encoder", D(code, turbo_encoder))
+        m, "turbo_encoder", D(turbo_encoder))
 
-     //    .def(py::init(&turbo_encoder::make),
-     //         py::arg("frame_size"),
-     //         py::arg("pack") = false,
-     //         py::arg("packed_bits") = false,
-     //         D(code, turbo_encoder, make))
-
-          .def_static("make",
+        .def_static("make",
             &turbo_encoder::make,
             py::arg("frame_size"),
             py::arg("pack") = false,
             py::arg("packed_bits") = false,
-            D(code, turbo_encoder, make))
+            D(turbo_encoder, make))
+
+        // .def(py::init(&turbo_encoder::make),
+        //      py::arg("frame_size"),
+        //      py::arg("pack") = false,
+        //      py::arg("packed_bits") = false,
+        //      D(turbo_encoder, make))
 
 
         .def("set_frame_size",
              &turbo_encoder::set_frame_size,
              py::arg("frame_size"),
-             D(code, turbo_encoder, set_frame_size))
+             D(turbo_encoder, set_frame_size))
 
 
-        .def("rate", &turbo_encoder::rate, D(code, turbo_encoder, rate))
+        .def("rate", &turbo_encoder::rate, D(turbo_encoder, rate))
 
         ;
 }

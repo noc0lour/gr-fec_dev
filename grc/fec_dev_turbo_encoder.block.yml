@@ -22,19 +22,19 @@ parameters:
     label: Frame Bits
     dtype: int
     default: '2048'
-value: ${ fec.turbo_encoder_make(framebits) }
+value: ${ fec_dev.turbo_encoder_make(framebits) }
 
 templates:
     imports: from gnuradio import fec_dev
     var_make: |-
         % if int(ndim)==0:
-        self.${id} = ${id} = fec.turbo_encoder_make(${framebits})\
+        self.${id} = ${id} = fec_dev.turbo_encoder_make(${framebits})\
         % elif int(ndim)==1:
-        self.${id} = ${id} = list(map((lambda a:fec.turbo_encoder_make(${framebits})),\
+        self.${id} = ${id} = list(map((lambda a:fec_dev.turbo_encoder_make(${framebits})),\
         range(0,${dim1})))
         % else:
         self.${id} = ${id} = list(map((lambda b:list(map((lambda a: \
-        fec.turbo_encoder_make(${framebits})),\
+        fec_dev.turbo_encoder_make(${framebits})),\
         range(0,${dim2})))), range(0,${dim1})))
         % endif
 
