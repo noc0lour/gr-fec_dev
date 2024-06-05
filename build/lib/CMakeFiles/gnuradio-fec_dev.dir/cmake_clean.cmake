@@ -1,7 +1,5 @@
 file(REMOVE_RECURSE
   ".1.0.0"
-  "CMakeFiles/gnuradio-fec_dev.dir/turbo_decoder_impl.cc.o"
-  "CMakeFiles/gnuradio-fec_dev.dir/turbo_decoder_impl.cc.o.d"
   "CMakeFiles/gnuradio-fec_dev.dir/turbo_encoder_impl.cc.o"
   "CMakeFiles/gnuradio-fec_dev.dir/turbo_encoder_impl.cc.o.d"
   "libgnuradio-fec_dev.1.0.0.0.dylib"

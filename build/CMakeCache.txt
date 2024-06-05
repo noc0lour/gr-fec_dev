@@ -366,7 +366,7 @@ fec_dev_python_LIB_DEPENDS:STATIC=general;Boost::date_time;general;Boost::progra
 fmt_DIR:PATH=/usr/local/lib/cmake/fmt
 
 //Dependencies for the target
-gnuradio-fec_dev_LIB_DEPENDS:STATIC=general;gnuradio::gnuradio-runtime;general;gnuradio::gnuradio-blocks;general;gnuradio::gnuradio-fec;general;aff3ct;
+gnuradio-fec_dev_LIB_DEPENDS:STATIC=general;gnuradio::gnuradio-runtime;general;gnuradio::gnuradio-blocks;general;gnuradio::gnuradio-fec;
 
 //Value Computed by CMake
 gr-fec_dev_BINARY_DIR:STATIC=/Users/kmcomer/gr-fec_dev/build
@@ -559,7 +559,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_PYTHON:INTERNAL=/usr/local/bin/python33.12.3
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/local/bin/pkg-config][v0.29.2()]
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/local/bin/python3][v3.12.3()]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/local/bin/python3][v3.12.3(3.6)]
 //Details about finding PythonLibs
 FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/local/Frameworks/Python.framework/Versions/3.12/lib/libpython3.12.dylib][/usr/local/Frameworks/Python.framework/Versions/3.12/include/python3.12][v3.12.3(3.12)]
 //Details about finding Threads
@@ -637,7 +637,7 @@ PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_INCLUDE_DIR
 PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
-PYTHON_INCLUDE_DIRS:INTERNAL=/usr/local/Frameworks/Python.framework/Versions/3.12/include/python3.12
+PYTHON_INCLUDE_DIRS:INTERNAL=/usr/local/opt/python@3.12/Frameworks/Python.framework/Versions/3.12/include/python3.12
 PYTHON_IS_DEBUG:INTERNAL=0
 PYTHON_LIBRARIES:INTERNAL=/usr/local/Frameworks/Python.framework/Versions/3.12/lib/libpython3.12.dylib
 //ADVANCED property for variable: PYTHON_LIBRARY
@@ -684,5 +684,5 @@ boost_unit_test_framework_DIR-ADVANCED:INTERNAL=1
 pkgcfg_lib_PC_GMP_gmp-ADVANCED:INTERNAL=1
 prefix_result:INTERNAL=/usr/local/Cellar/gmp/6.3.0/lib
 //Directories where pybind11 and possibly Python headers are located
-pybind11_INCLUDE_DIRS:INTERNAL=/usr/local/include;/usr/local/Frameworks/Python.framework/Versions/3.12/include/python3.12
+pybind11_INCLUDE_DIRS:INTERNAL=/usr/local/include;/usr/local/opt/python@3.12/Frameworks/Python.framework/Versions/3.12/include/python3.12
 

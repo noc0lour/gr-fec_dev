@@ -5,3 +5,4 @@
 ./include/gnuradio/fec_dev/turbo_decoder.hError occurred while running CASTXML xml file does not exist
 ./include/gnuradio/fec_dev/turbo_decoder.hError occurred while running CASTXML xml file does not exist
 ./include/gnuradio/fec_dev/turbo_decoder.hError occurred while running CASTXML xml file does not exist
+./include/gnuradio/fec_dev/turbo_encoder.hError occurred while running CASTXML xml file does not exist
