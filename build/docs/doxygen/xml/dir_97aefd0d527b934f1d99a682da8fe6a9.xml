@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
   <compounddef id="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir">
     <compoundname>lib</compoundname>
+    <innerfile refid="turbo__decoder__impl_8h">turbo_decoder_impl.h</innerfile>
     <innerfile refid="turbo__encoder__impl_8h">turbo_encoder_impl.h</innerfile>
     <briefdescription>
     </briefdescription>

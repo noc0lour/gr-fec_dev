@@ -38,6 +38,9 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gnuradio/grc/blocks" TYPE FILE FILES "/Users/kmcomer/gr-fec_dev/grc/fec_dev_turbo_encoder.block.yml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gnuradio/grc/blocks" TYPE FILE FILES
+    "/Users/kmcomer/gr-fec_dev/grc/fec_dev_turbo_encoder.block.yml"
+    "/Users/kmcomer/gr-fec_dev/grc/fec_dev_turbo_decoder.block.yml"
+    )
 endif()
 

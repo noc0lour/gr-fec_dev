@@ -10,4 +10,5 @@
 # Install public header files
 ########################################################################
 install(FILES api.h
-    turbo_encoder.h DESTINATION include/gnuradio/fec_dev)
+    turbo_encoder.h
+    turbo_decoder.h DESTINATION include/gnuradio/fec_dev)

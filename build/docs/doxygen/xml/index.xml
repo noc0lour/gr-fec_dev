@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.11.0" xml:lang="en-US">
+  <compound refid="classgr_1_1fec__dev_1_1turbo__decoder" kind="class"><name>gr::fec_dev::turbo_decoder</name>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder_1aa528ee329235f086d60c8fc30c7cfb87" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder_1a7f109ff1ff2b93ad7ad0efb305358ca1" kind="function"><name>set_frame_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder_1a489e9b1740b0994e081f75546215404a" kind="function"><name>rate</name></member>
+  </compound>
+  <compound refid="classgr_1_1fec__dev_1_1turbo__decoder__impl" kind="class"><name>gr::fec_dev::turbo_decoder_impl</name>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1a4e78bbde374c639335ae356363307218" kind="variable"><name>d_max_frame_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1a3607e85a20d785f93cd7805efebf4435" kind="variable"><name>d_frame_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1a94e119efadf6ae22cb35431ac7aaa858" kind="function"><name>generic_work</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1ae6d523e8a3c00527db558d2021823cdf" kind="function"><name>get_output_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1a497f8dd631477b156d42c1bca3d22aa3" kind="function"><name>get_input_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1a5cb4df5773ce64d145870c8503e76cd0" kind="function"><name>get_input_item_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1abc877d88f2377cc58104ca181de2abe1" kind="function"><name>get_input_conversion</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1abfb039b42568226a337a787211aaf9b1" kind="function"><name>turbo_decoder_impl</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1af84e42e2ccbabba36bc984910f3916d2" kind="function"><name>~turbo_decoder_impl</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1aebf0c0ee9d053350969c20e6640ed3c6" kind="function"><name>set_frame_size</name></member>
+    <member refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1a37614624ba059c4df9daa71259f58d8a" kind="function"><name>rate</name></member>
+  </compound>
   <compound refid="classgr_1_1fec__dev_1_1turbo__encoder" kind="class"><name>gr::fec_dev::turbo_encoder</name>
     <member refid="classgr_1_1fec__dev_1_1turbo__encoder_1a11efa5506b2bc20a77d3faf2f0d1d601" kind="function"><name>make</name></member>
     <member refid="classgr_1_1fec__dev_1_1turbo__encoder_1a0e0a074375d2fbbb5397a2333abfd6c1" kind="function"><name>set_frame_size</name></member>
@@ -65,9 +83,22 @@
   <compound refid="api_8h" kind="file"><name>api.h</name>
     <member refid="api_8h_1a6eaa784ee0427af2dcd1d88917a75329" kind="define"><name>FEC_DEV_API</name></member>
   </compound>
+  <compound refid="turbo__decoder_8h" kind="file"><name>turbo_decoder.h</name>
+  </compound>
   <compound refid="turbo__encoder_8h" kind="file"><name>turbo_encoder.h</name>
   </compound>
+  <compound refid="turbo__decoder__impl_8h" kind="file"><name>turbo_decoder_impl.h</name>
+  </compound>
   <compound refid="turbo__encoder__impl_8h" kind="file"><name>turbo_encoder_impl.h</name>
+  </compound>
+  <compound refid="turbo__decoder__pydoc__template_8h" kind="file"><name>turbo_decoder_pydoc_template.h</name>
+    <member refid="turbo__decoder__pydoc__template_8h_1a74021f021dcdfbb22891787b79c5529d" kind="define"><name>D</name></member>
+    <member refid="turbo__decoder__pydoc__template_8h_1aab594c9a4a997a438fecdb03c4ae7cac" kind="variable"><name>__doc_gr_fec_dev_turbo_decoder</name></member>
+    <member refid="turbo__decoder__pydoc__template_8h_1af4d8425ce71732d893e7bc10dec51101" kind="variable"><name>__doc_gr_fec_dev_turbo_decoder_turbo_decoder_0</name></member>
+    <member refid="turbo__decoder__pydoc__template_8h_1a22b2e9c9d01ca448897a246b8e973f9a" kind="variable"><name>__doc_gr_fec_dev_turbo_decoder_turbo_decoder_1</name></member>
+    <member refid="turbo__decoder__pydoc__template_8h_1a02322d09dfa070cdc6927e2846ad8f46" kind="variable"><name>__doc_gr_fec_dev_turbo_decoder_make</name></member>
+    <member refid="turbo__decoder__pydoc__template_8h_1a4dfc6d8009689a1350b633e1cfead404" kind="variable"><name>__doc_gr_fec_dev_turbo_decoder_set_frame_size</name></member>
+    <member refid="turbo__decoder__pydoc__template_8h_1a6fb2657c9045779b69ceeb77fc5467c8" kind="variable"><name>__doc_gr_fec_dev_turbo_decoder_rate</name></member>
   </compound>
   <compound refid="turbo__encoder__pydoc__template_8h" kind="file"><name>turbo_encoder_pydoc_template.h</name>
     <member refid="turbo__encoder__pydoc__template_8h_1a74021f021dcdfbb22891787b79c5529d" kind="define"><name>D</name></member>

@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(turbo_encoder.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(c5e51d355f906665892488059ddc87fd)                     */
+/* BINDTOOL_HEADER_FILE_HASH(4285b988ac08e59c6863f6453472ccee)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -29,7 +29,7 @@ namespace py = pybind11;
 
 void bind_turbo_encoder(py::module& m)
 {
-
+     
     using turbo_encoder = ::gr::fec_dev::turbo_encoder;
 
 
@@ -37,17 +37,11 @@ void bind_turbo_encoder(py::module& m)
         m, "turbo_encoder", D(turbo_encoder))
 
         .def_static("make",
-            &turbo_encoder::make,
-            py::arg("frame_size"),
-            py::arg("pack") = false,
-            py::arg("packed_bits") = false,
-            D(turbo_encoder, make))
-
-        // .def(py::init(&turbo_encoder::make),
-        //      py::arg("frame_size"),
-        //      py::arg("pack") = false,
-        //      py::arg("packed_bits") = false,
-        //      D(turbo_encoder, make))
+                    &turbo_encoder::make,
+                    py::arg("frame_size"),
+                    py::arg("pack") = false,
+                    py::arg("packed_bits") = false,
+                    D(turbo_encoder, make))
 
 
         .def("set_frame_size",

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/fec_dev_python.dir/python_bindings.cc.o"
   "CMakeFiles/fec_dev_python.dir/python_bindings.cc.o.d"
+  "CMakeFiles/fec_dev_python.dir/turbo_decoder_python.cc.o"
+  "CMakeFiles/fec_dev_python.dir/turbo_decoder_python.cc.o.d"
   "CMakeFiles/fec_dev_python.dir/turbo_encoder_python.cc.o"
   "CMakeFiles/fec_dev_python.dir/turbo_encoder_python.cc.o.d"
   "fec_dev_python.cpython-312-darwin.so"

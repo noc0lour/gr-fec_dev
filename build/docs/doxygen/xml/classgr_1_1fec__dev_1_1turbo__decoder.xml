@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="classgr_1_1fec__dev_1_1turbo__decoder" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::fec_dev::turbo_decoder</compoundname>
+    <basecompoundref prot="public" virt="virtual">fec::generic_decoder</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1fec__dev_1_1turbo__decoder__impl" prot="public" virt="non-virtual">gr::fec_dev::turbo_decoder_impl</derivedcompoundref>
+    <includes refid="turbo__decoder_8h" local="no">turbo_decoder.h</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__decoder_1aa528ee329235f086d60c8fc30c7cfb87" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic_decoder::sptr</type>
+        <definition>static generic_decoder::sptr gr::fec_dev::turbo_decoder::make</definition>
+        <argsstring>(int frame_size)</argsstring>
+        <name>make</name>
+        <qualifiedname>gr::fec_dev::turbo_decoder::make</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>frame_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Build a turbo encoding FEC API object.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bits per frame. If using in the tagged stream style, this is the maximum allowable number of bits per frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_decoder.h" line="38" column="34"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__decoder_1a7f109ff1ff2b93ad7ad0efb305358ca1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>bool gr::fec_dev::turbo_decoder::set_frame_size</definition>
+        <argsstring>(unsigned int frame_size) override=0</argsstring>
+        <name>set_frame_size</name>
+        <qualifiedname>gr::fec_dev::turbo_decoder::set_frame_size</qualifiedname>
+        <reimplementedby refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1aebf0c0ee9d053350969c20e6640ed3c6">set_frame_size</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the uncoded frame size to <computeroutput>frame_size</computeroutput>. If <computeroutput>frame_size</computeroutput> is greater than the value given to the constructor, the frame size will be capped by that initial value and this function will return false. Otherwise, it returns true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_decoder.h" line="47" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__decoder_1a489e9b1740b0994e081f75546215404a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>double gr::fec_dev::turbo_decoder::rate</definition>
+        <argsstring>() override=0</argsstring>
+        <name>rate</name>
+        <qualifiedname>gr::fec_dev::turbo_decoder::rate</qualifiedname>
+        <reimplementedby refid="classgr_1_1fec__dev_1_1turbo__decoder__impl_1a37614624ba059c4df9daa71259f58d8a">rate</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the coding rate of this decoder (it will always be 1). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_decoder.h" line="52" column="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Turbo Decoding class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A turbo decoder class that simply passes the input to the output. It is meant to allow us to easily use the FEC API decoder and decoder blocks in an application with no coding. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>fec::generic_decoder</label>
+      </node>
+      <node id="1">
+        <label>gr::fec_dev::turbo_decoder</label>
+        <link refid="classgr_1_1fec__dev_1_1turbo__decoder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gr::fec_dev::turbo_decoder_impl</label>
+        <link refid="classgr_1_1fec__dev_1_1turbo__decoder__impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>fec::generic_decoder</label>
+      </node>
+      <node id="1">
+        <label>gr::fec_dev::turbo_decoder</label>
+        <link refid="classgr_1_1fec__dev_1_1turbo__decoder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_decoder.h" line="28" column="1" bodyfile="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_decoder.h" bodystart="29" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classgr_1_1fec__dev_1_1turbo__decoder_1aa528ee329235f086d60c8fc30c7cfb87" prot="public" virt="non-virtual"><scope>gr::fec_dev::turbo_decoder</scope><name>make</name></member>
+      <member refid="classgr_1_1fec__dev_1_1turbo__decoder_1a489e9b1740b0994e081f75546215404a" prot="public" virt="pure-virtual"><scope>gr::fec_dev::turbo_decoder</scope><name>rate</name></member>
+      <member refid="classgr_1_1fec__dev_1_1turbo__decoder_1a7f109ff1ff2b93ad7ad0efb305358ca1" prot="public" virt="pure-virtual"><scope>gr::fec_dev::turbo_decoder</scope><name>set_frame_size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="27" column="14" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="27" bodyend="-1"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="27" column="8" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1fec__dev_1_1turbo__encoder__impl_1aec6c399d5573eb94174a8f84d53bf93e" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="28" column="14" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="28" bodyend="-1"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="28" column="8" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a6439b9c4c70617aec6865c3aecfcf39f" prot="private" static="no" mutable="no">
         <type>unsigned int</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="30" column="22" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="30" bodyend="-1"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="30" column="16" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1fec__dev_1_1turbo__encoder__impl_1acae1c107acd60f4e1e32428c184b1789" prot="private" static="no" mutable="no">
         <type>unsigned int</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="31" column="22" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="31" bodyend="-1"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="31" column="16" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="31" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="22" column="14"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="22" column="8"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__encoder__impl_1afe8dedeeeb494c81bd49e053e84bf83f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -97,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="23" column="13"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="23" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a8ffc13d2f5775f41e4c640338658708d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="24" column="13"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="24" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a5257026fd487f8805e8efe1b51fe6491" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="25" column="20"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="25" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a042bb6c908aaf742bffcdec3ca33e8ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="26" column="20"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="26" column="14"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="34" column="9"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="34" column="3"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a0c9aaa27033b549615d37c0279d8b2c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -183,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="35" column="9"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="35" column="3"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__encoder__impl_1af9d53707e81036b24afc1d4e9bc72a30" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -203,7 +203,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="37" column="14"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="37" column="8"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a5c5257153f1485f9965d40a7424a2c0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -219,7 +219,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="38" column="16"/>
+        <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="38" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -260,7 +260,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="18" column="7" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="19" bodyend="39"/>
+    <location file="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" line="18" column="1" bodyfile="/Users/kmcomer/gr-fec_dev/lib/turbo_encoder_impl.h" bodystart="19" bodyend="39"/>
     <listofallmembers>
       <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1acae1c107acd60f4e1e32428c184b1789" prot="private" virt="non-virtual"><scope>gr::fec_dev::turbo_encoder_impl</scope><name>d_frame_size</name></member>
       <member refid="classgr_1_1fec__dev_1_1turbo__encoder__impl_1a6439b9c4c70617aec6865c3aecfcf39f" prot="private" virt="non-virtual"><scope>gr::fec_dev::turbo_encoder_impl</scope><name>d_max_frame_size</name></member>

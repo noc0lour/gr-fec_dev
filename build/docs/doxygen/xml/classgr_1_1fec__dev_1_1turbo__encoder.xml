@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="52" column="11"/>
+        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="51" column="5"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="61" column="16"/>
+        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="60" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1fec__dev_1_1turbo__encoder_1aa539e60dfc5aaa6c1bb82804efda0778" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>double</type>
@@ -97,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="66" column="18"/>
+        <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="65" column="12"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -134,7 +134,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="29" column="7" bodyfile="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" bodystart="30" bodyend="67"/>
+    <location file="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" line="28" column="1" bodyfile="/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h" bodystart="29" bodyend="66"/>
     <listofallmembers>
       <member refid="classgr_1_1fec__dev_1_1turbo__encoder_1a11efa5506b2bc20a77d3faf2f0d1d601" prot="public" virt="non-virtual"><scope>gr::fec_dev::turbo_encoder</scope><name>make</name></member>
       <member refid="classgr_1_1fec__dev_1_1turbo__encoder_1aa539e60dfc5aaa6c1bb82804efda0778" prot="public" virt="pure-virtual"><scope>gr::fec_dev::turbo_encoder</scope><name>rate</name></member>

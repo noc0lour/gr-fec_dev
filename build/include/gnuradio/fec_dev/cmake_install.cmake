@@ -41,6 +41,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gnuradio/fec_dev" TYPE FILE FILES
     "/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/api.h"
     "/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_encoder.h"
+    "/Users/kmcomer/gr-fec_dev/include/gnuradio/fec_dev/turbo_decoder.h"
     )
 endif()
 

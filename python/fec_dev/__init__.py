@@ -23,3 +23,6 @@ except ModuleNotFoundError:
 # Remap make functions to __init__ here
 turbo_encoder.__init__ = turbo_encoder.make
 turbo_encoder_make = turbo_encoder.make
+
+turbo_decoder.__init__ = turbo_decoder.make
+turbo_decoder_make = turbo_decoder.make
