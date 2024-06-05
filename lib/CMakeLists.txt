@@ -11,7 +11,6 @@
 ########################################################################
 include(GrPlatform) #define LIB_SUFFIX
 list(APPEND fec_dev_sources
-    turbo_encoder.cc
     turbo_encoder_impl.cc )
 
 set(fec_dev_sources
@@ -23,7 +22,7 @@ if(NOT fec_dev_sources)
 endif(NOT fec_dev_sources)
 
 add_library(gnuradio-fec_dev SHARED ${fec_dev_sources})
-target_link_libraries(gnuradio-fec_dev gnuradio::gnuradio-runtime)
+target_link_libraries(gnuradio-fec_dev gnuradio::gnuradio-runtime gnuradio::gnuradio-blocks gnuradio::gnuradio-fec)
 target_include_directories(
     gnuradio-fec_dev
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
