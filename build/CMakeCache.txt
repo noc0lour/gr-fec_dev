@@ -317,6 +317,24 @@ VOLK_LIBRARIES:STRING=Volk::volk
 //The directory containing a CMake configuration file for Volk.
 Volk_DIR:PATH=/usr/local/lib/cmake/volk
 
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib/libz.tbd
+
+//Path to a file.
+ZSTD_INCLUDE_DIR:PATH=/usr/local/include
+
+//Path to a library.
+ZSTD_LIBRARIES:FILEPATH=/usr/local/lib/libzstd.dylib
+
+//The directory containing a CMake configuration file for aff3ct.
+aff3ct_DIR:PATH=/usr/local/lib/cmake/aff3ct-3.0.2-109-geb9541f
+
 //The directory containing a CMake configuration file for boost_date_time.
 boost_date_time_DIR:PATH=/usr/local/lib/cmake/boost_date_time-1.85.0
 
@@ -338,6 +356,9 @@ boost_thread_DIR:PATH=/usr/local/lib/cmake/boost_thread-1.85.0
 //The directory containing a CMake configuration file for boost_unit_test_framework.
 boost_unit_test_framework_DIR:PATH=/usr/local/lib/cmake/boost_unit_test_framework-1.85.0
 
+//The directory containing a CMake configuration file for cpptrace.
+cpptrace_DIR:PATH=/usr/local/lib/cmake/cpptrace
+
 //Dependencies for the target
 fec_dev_python_LIB_DEPENDS:STATIC=general;Boost::date_time;general;Boost::program_options;general;Boost::system;general;Boost::regex;general;Boost::thread;general;Boost::unit_test_framework;general;gnuradio-fec_dev;
 
@@ -345,7 +366,7 @@ fec_dev_python_LIB_DEPENDS:STATIC=general;Boost::date_time;general;Boost::progra
 fmt_DIR:PATH=/usr/local/lib/cmake/fmt
 
 //Dependencies for the target
-gnuradio-fec_dev_LIB_DEPENDS:STATIC=general;gnuradio::gnuradio-runtime;general;gnuradio::gnuradio-blocks;general;gnuradio::gnuradio-fec;
+gnuradio-fec_dev_LIB_DEPENDS:STATIC=general;gnuradio::gnuradio-runtime;general;gnuradio::gnuradio-blocks;general;gnuradio::gnuradio-fec;general;aff3ct;
 
 //Value Computed by CMake
 gr-fec_dev_BINARY_DIR:STATIC=/Users/kmcomer/gr-fec_dev/build
@@ -356,6 +377,9 @@ gr-fec_dev_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 gr-fec_dev_SOURCE_DIR:STATIC=/Users/kmcomer/gr-fec_dev
 
+//The directory containing a CMake configuration file for libdwarf.
+libdwarf_DIR:PATH=/usr/local/lib/cmake/libdwarf
+
 //Path to a library.
 pkgcfg_lib_PC_GMP_gmp:FILEPATH=/usr/local/Cellar/gmp/6.3.0/lib/libgmp.dylib
 
@@ -364,6 +388,9 @@ pybind11_DIR:PATH=/usr/local/share/cmake/pybind11
 
 //The directory containing a CMake configuration file for spdlog.
 spdlog_DIR:PATH=/usr/local/lib/cmake/spdlog
+
+//The directory containing a CMake configuration file for zstd.
+zstd_DIR:PATH=/usr/local/lib/cmake/zstd
 
 
 ########################
@@ -532,13 +559,17 @@ FIND_PACKAGE_MESSAGE_DETAILS_PYTHON:INTERNAL=/usr/local/bin/python33.12.3
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/local/bin/pkg-config][v0.29.2()]
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/local/bin/python3][v3.12.3(3.6)]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/local/bin/python3][v3.12.3()]
 //Details about finding PythonLibs
 FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/local/Frameworks/Python.framework/Versions/3.12/lib/libpython3.12.dylib][/usr/local/Frameworks/Python.framework/Versions/3.12/include/python3.12][v3.12.3(3.12)]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding Volk
 FIND_PACKAGE_MESSAGE_DETAILS_Volk:INTERNAL=[Volk::volk][/usr/local/include][v()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib/libz.tbd][/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include][c ][v1.2.11()]
+//Details about finding ZSTD
+FIND_PACKAGE_MESSAGE_DETAILS_ZSTD:INTERNAL=[/usr/local/lib/libzstd.dylib][/usr/local/include][1.5.5][v1.5.5()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GMPXX_LIBRARY
@@ -606,7 +637,7 @@ PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_INCLUDE_DIR
 PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
-PYTHON_INCLUDE_DIRS:INTERNAL=/usr/local/opt/python@3.12/Frameworks/Python.framework/Versions/3.12/include/python3.12
+PYTHON_INCLUDE_DIRS:INTERNAL=/usr/local/Frameworks/Python.framework/Versions/3.12/include/python3.12
 PYTHON_IS_DEBUG:INTERNAL=0
 PYTHON_LIBRARIES:INTERNAL=/usr/local/Frameworks/Python.framework/Versions/3.12/lib/libpython3.12.dylib
 //ADVANCED property for variable: PYTHON_LIBRARY
@@ -626,6 +657,12 @@ Python_NumPy_INCLUDE_DIR-ADVANCED:INTERNAL=1
 VOLK_INCLUDE_DIRS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: VOLK_LIBRARIES
 VOLK_LIBRARIES-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 _Python:INTERNAL=PYTHON
 __pkg_config_arguments_PC_GMP:INTERNAL=gmp
 __pkg_config_checked_PC_GMP:INTERNAL=1
@@ -647,5 +684,5 @@ boost_unit_test_framework_DIR-ADVANCED:INTERNAL=1
 pkgcfg_lib_PC_GMP_gmp-ADVANCED:INTERNAL=1
 prefix_result:INTERNAL=/usr/local/Cellar/gmp/6.3.0/lib
 //Directories where pybind11 and possibly Python headers are located
-pybind11_INCLUDE_DIRS:INTERNAL=/usr/local/include;/usr/local/opt/python@3.12/Frameworks/Python.framework/Versions/3.12/include/python3.12
+pybind11_INCLUDE_DIRS:INTERNAL=/usr/local/include;/usr/local/Frameworks/Python.framework/Versions/3.12/include/python3.12
 
