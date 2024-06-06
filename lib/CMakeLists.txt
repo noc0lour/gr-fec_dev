@@ -22,7 +22,7 @@ if(NOT fec_dev_sources)
 endif(NOT fec_dev_sources)
 
 add_library(gnuradio-fec_dev SHARED ${fec_dev_sources})
-target_link_libraries(gnuradio-fec_dev gnuradio::gnuradio-runtime gnuradio::gnuradio-blocks gnuradio::gnuradio-fec)
+target_link_libraries(gnuradio-fec_dev gnuradio::gnuradio-runtime gnuradio::gnuradio-blocks gnuradio::gnuradio-fec aff3ct::aff3ct-shared-lib)
 target_include_directories(
     gnuradio-fec_dev
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>

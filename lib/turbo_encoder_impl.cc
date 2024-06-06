@@ -10,6 +10,7 @@
 
 #include "turbo_encoder_impl.h"
 #include <gnuradio/fec/generic_encoder.h>
+#include <aff3ct.hpp>
 #include <volk/volk.h>
 #include <sstream>
 
