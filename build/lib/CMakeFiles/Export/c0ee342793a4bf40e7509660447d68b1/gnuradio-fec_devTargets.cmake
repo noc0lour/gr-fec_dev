@@ -60,7 +60,7 @@ add_library(gnuradio::gnuradio-fec_dev SHARED IMPORTED)
 
 set_target_properties(gnuradio::gnuradio-fec_dev PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_LINK_LIBRARIES "gnuradio::gnuradio-runtime;gnuradio::gnuradio-blocks;gnuradio::gnuradio-fec"
+  INTERFACE_LINK_LIBRARIES "gnuradio::gnuradio-runtime;gnuradio::gnuradio-blocks;gnuradio::gnuradio-fec;aff3ct"
 )
 
 # Load information for each installed configuration.

@@ -185,6 +185,30 @@ gnuradio-fec_dev/fast:
 	cd /Users/kmcomer/gr-fec_dev/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-fec_dev.dir/build.make lib/CMakeFiles/gnuradio-fec_dev.dir/build
 .PHONY : gnuradio-fec_dev/fast
 
+turbo_decoder_impl.o: turbo_decoder_impl.cc.o
+.PHONY : turbo_decoder_impl.o
+
+# target to build an object file
+turbo_decoder_impl.cc.o:
+	cd /Users/kmcomer/gr-fec_dev/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-fec_dev.dir/build.make lib/CMakeFiles/gnuradio-fec_dev.dir/turbo_decoder_impl.cc.o
+.PHONY : turbo_decoder_impl.cc.o
+
+turbo_decoder_impl.i: turbo_decoder_impl.cc.i
+.PHONY : turbo_decoder_impl.i
+
+# target to preprocess a source file
+turbo_decoder_impl.cc.i:
+	cd /Users/kmcomer/gr-fec_dev/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-fec_dev.dir/build.make lib/CMakeFiles/gnuradio-fec_dev.dir/turbo_decoder_impl.cc.i
+.PHONY : turbo_decoder_impl.cc.i
+
+turbo_decoder_impl.s: turbo_decoder_impl.cc.s
+.PHONY : turbo_decoder_impl.s
+
+# target to generate assembly for a file
+turbo_decoder_impl.cc.s:
+	cd /Users/kmcomer/gr-fec_dev/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-fec_dev.dir/build.make lib/CMakeFiles/gnuradio-fec_dev.dir/turbo_decoder_impl.cc.s
+.PHONY : turbo_decoder_impl.cc.s
+
 turbo_encoder_impl.o: turbo_encoder_impl.cc.o
 .PHONY : turbo_encoder_impl.o
 
@@ -223,6 +247,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... gnuradio-fec_dev"
+	@echo "... turbo_decoder_impl.o"
+	@echo "... turbo_decoder_impl.i"
+	@echo "... turbo_decoder_impl.s"
 	@echo "... turbo_encoder_impl.o"
 	@echo "... turbo_encoder_impl.i"
 	@echo "... turbo_encoder_impl.s"
