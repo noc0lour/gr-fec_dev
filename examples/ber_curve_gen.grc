@@ -127,23 +127,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [768, 660.0]
-    rotation: 0
-    state: enabled
-- name: dec_turbo
-  id: variable_turbo_decoder_def
-  parameters:
-    comment: ''
-    dim1: len(esno_0)
-    dim2: '1'
-    framebits: framebits
-    ndim: '2'
-    value: '"ok"'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [408, 124.0]
+    coordinate: [776, 659]
     rotation: 0
     state: enabled
 - name: enc_cc
@@ -233,21 +217,6 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [776, 467]
-    rotation: 0
-    state: enabled
-- name: enc_turbo
-  id: variable_turbo_encoder_def
-  parameters:
-    comment: ''
-    dim1: len(esno_0)
-    dim2: '1'
-    framebits: framebits
-    ndim: '2'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [272, 124.0]
     rotation: 0
     state: enabled
 - name: esno
@@ -367,7 +336,7 @@ blocks:
     bus_structure: null
     coordinate: [248, 212.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: fec_bercurve_generator_0_0
   id: fec_bercurve_generator
   parameters:
@@ -389,15 +358,15 @@ blocks:
     bus_structure: null
     coordinate: [248, 116.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: fec_bercurve_generator_0_0_0
   id: fec_bercurve_generator
   parameters:
     affinity: ''
     alias: ''
     comment: ''
-    decoder_list: dec_turbo
-    encoder_list: enc_turbo
+    decoder_list: dec_dummy
+    encoder_list: enc_dummy
     esno: esno_0
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -433,7 +402,7 @@ blocks:
     bus_structure: null
     coordinate: [248, 332.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: fec_bercurve_generator_0_1_0
   id: fec_bercurve_generator
   parameters:
@@ -455,7 +424,7 @@ blocks:
     bus_structure: null
     coordinate: [248, 460.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: qtgui_bercurve_sink_0
   id: qtgui_bercurve_sink
   parameters:
@@ -509,7 +478,7 @@ blocks:
     marker7: '0'
     marker8: '0'
     marker9: '0'
-    num_curves: '1'
+    num_curves: '5'
     style1: '1'
     style10: '0'
     style2: '2'
@@ -542,7 +511,11 @@ blocks:
     state: enabled
 
 connections:
-- [fec_bercurve_generator_0_0_0, '32', qtgui_bercurve_sink_0, '32']
+- [fec_bercurve_generator_0, '32', qtgui_bercurve_sink_0, '162']
+- [fec_bercurve_generator_0_0, '32', qtgui_bercurve_sink_0, '161']
+- [fec_bercurve_generator_0_0_0, '32', qtgui_bercurve_sink_0, '160']
+- [fec_bercurve_generator_0_1, '32', qtgui_bercurve_sink_0, '163']
+- [fec_bercurve_generator_0_1_0, '32', qtgui_bercurve_sink_0, '164']
 
 metadata:
   file_format: 1
