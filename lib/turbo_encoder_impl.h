@@ -9,6 +9,7 @@
 #define INCLUDED_FEC_DEV_TURBO_ENCODER_IMPL_H
 
 #include <gnuradio/fec_dev/turbo_encoder.h>
+#include <aff3ct.hpp>
 #include <map>
 #include <string>
 

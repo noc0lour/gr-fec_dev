@@ -10,6 +10,7 @@
 
 #include "turbo_encoder_impl.h"
 #include <gnuradio/fec/generic_encoder.h>
+#include <aff3ct.hpp>
 #include <volk/volk.h>
 #include <sstream>
 
@@ -78,8 +79,17 @@ void turbo_encoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     const unsigned char* in = (const unsigned char*)inbuffer;
     unsigned char* out = (unsigned char*)outbuffer;
 
-    memcpy(out, in, d_frame_size * sizeof(char));
-}
+          memcpy(out, in, d_frame_size * sizeof(char));
+          int k = 1;
+          int n = 10;
+          bool buffered = false;
+          auto enc_params = aff3ct::factory::Encoder_repetition();
+          auto dec_params = aff3ct::factory::Decoder_repetition();
+          //auto codec = aff3ct::factory::Codec_repetition();
+          //auto codec = aff3ct::factory::Codec_repetition(enc_params, dec_params);
+          auto encoder = std::make_unique<aff3ct::module::Encoder_repetition_sys<B_8>>(k,n,buffered);
+          auto decoder = std::unique_ptr<aff3ct::module::Decoder_repetition_fast<>>(new aff3ct::module::Decoder_repetition_fast(k,n,buffered));
+      }
 
 } /* namespace fec_dev */
 } /* namespace gr */
