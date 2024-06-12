@@ -13,6 +13,11 @@
 #include <map>
 #include <string>
 
+typedef enum _enc_standard_t {
+    LTE = 0,
+    CCSDS
+} enc_standard_t;
+
 namespace gr {
 namespace fec_dev {
 
@@ -48,7 +53,7 @@ public:
     *        extended encoder interface.
     */
     static generic_encoder::sptr
-    make(int frame_size, bool pack = false, bool packed_bits = false);
+    make(int frame_size, enc_standard_t enc_standard);
 
     /*!
     * Sets the uncoded frame size to \p frame_size. If \p

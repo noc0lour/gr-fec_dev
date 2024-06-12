@@ -23,16 +23,12 @@ private:
   void generic_work(const void* inbuffer, void* outbuffer) override;
   int get_output_size() override;
   int get_input_size() override;
-  const char* get_input_conversion() override;
-  const char* get_output_conversion() override;
-  bool d_pack_input;
-  bool d_packed_bits_output;
 
-  unsigned int d_max_frame_size;
   unsigned int d_frame_size;
+  unsigned int d_max_frame_size;
 
 public:
-  turbo_encoder_impl(int frame_size, bool pack = false, bool packed_bits = false);
+  turbo_encoder_impl(int frame_size, enc_standard_t enc_standard);
   ~turbo_encoder_impl() override;
 
   bool set_frame_size(unsigned int frame_size) override;
