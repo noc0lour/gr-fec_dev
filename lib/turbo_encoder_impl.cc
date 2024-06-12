@@ -22,7 +22,6 @@ fec::generic_encoder::sptr turbo_encoder::make(int frame_size, bool pack, bool p
     return fec::generic_encoder::sptr(new turbo_encoder_impl(frame_size, pack, packed_bits));
 }
 
-
 /*
 * The private constructor
 */
@@ -42,7 +41,9 @@ turbo_encoder_impl::~turbo_encoder_impl()
 {
 }
 
-int turbo_encoder_impl::get_output_size() { return d_frame_size; }
+int turbo_encoder_impl::get_output_size() { 
+    return d_frame_size * 3;
+}
 
 int turbo_encoder_impl::get_input_size() { return d_frame_size; }
 
@@ -76,20 +77,24 @@ double turbo_encoder_impl::rate() { return 1.0; }
 
 void turbo_encoder_impl::generic_work(const void* inbuffer, void* outbuffer)
 {
-    const unsigned char* in = (const unsigned char*)inbuffer;
-    unsigned char* out = (unsigned char*)outbuffer;
+    // const unsigned char* in = (const unsigned char*)inbuffer;
+    // unsigned char* out = (unsigned char*)outbuffer;
+    // memcpy(out, in, d_frame_size * sizeof(char));
 
-          memcpy(out, in, d_frame_size * sizeof(char));
-          int k = 1;
-          int n = 10;
-          bool buffered = false;
-          auto enc_params = aff3ct::factory::Encoder_repetition();
-          auto dec_params = aff3ct::factory::Decoder_repetition();
-          //auto codec = aff3ct::factory::Codec_repetition();
-          //auto codec = aff3ct::factory::Codec_repetition(enc_params, dec_params);
-          auto encoder = std::make_unique<aff3ct::module::Encoder_repetition_sys<B_8>>(k,n,buffered);
-          auto decoder = std::unique_ptr<aff3ct::module::Decoder_repetition_fast<>>(new aff3ct::module::Decoder_repetition_fast(k,n,buffered));
-      }
+    const int* in = (const int*)inbuffer;
+    int* out = (int*)outbuffer;
+
+    int K = get_input_size();
+    int N = get_output_size();
+    auto enco_n = aff3ct::module::Encoder<>(K, N);
+    auto enco_i = aff3ct::module::Encoder<>(K, N);
+
+    aff3ct::tools::Interleaver_core_random<> core(N);
+	aff3ct::module::Interleaver<int32_t> pi(core);
+
+    auto encoder = std::unique_ptr<aff3ct::module::Encoder_turbo<>>(new aff3ct::module::Encoder_turbo<>(K, N, enco_n, enco_i, pi));;
+    encoder->encode(in, out);
+}
 
 } /* namespace fec_dev */
 } /* namespace gr */
