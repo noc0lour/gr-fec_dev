@@ -71,6 +71,7 @@ class fecapi_decoders(gr.top_block, Qt.QWidget):
         self.rate = rate = 2
         self.polys = polys = [109, 79]
         self.k = k = 7
+        self.variable_cc_encoder_def_0 = variable_cc_encoder_def_0 = fec.cc_encoder_make(2048,7, 2, [79,109], 0, fec.CC_STREAMING, False)
         self.samp_rate = samp_rate = 50000
         self.enc_turbo = enc_turbo = fec_dev.turbo_encoder_make(2048)
         self.enc_rep = enc_rep = fec.repetition_encoder_make((frame_size*8), 3)
@@ -133,7 +134,7 @@ class fecapi_decoders(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.qwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
-        self.fec_extended_encoder_1_0_0 = fec.extended_encoder(encoder_obj_list=enc_turbo, threading='capillary', puncpat=puncpat)
+        self.fec_extended_encoder_1_0_0 = fec.extended_encoder(encoder_obj_list=enc_turbo, threading='ordinary', puncpat=puncpat)
         self.fec_extended_decoder_0_1_0 = fec.extended_decoder(decoder_obj_list=dec_turbo, threading= None, ann=None, puncpat=puncpat, integration_period=10000)
         self.digital_map_bb_0_0_0_0 = digital.map_bb([-1, 1])
         self.blocks_vector_source_x_0_1_0 = blocks.vector_source_b((frame_size//15)*[0, 0, 1, 0, 3, 0, 7, 0, 15, 0, 31, 0, 63, 0, 127], True, 1, [])
@@ -197,6 +198,12 @@ class fecapi_decoders(gr.top_block, Qt.QWidget):
 
     def set_k(self, k):
         self.k = k
+
+    def get_variable_cc_encoder_def_0(self):
+        return self.variable_cc_encoder_def_0
+
+    def set_variable_cc_encoder_def_0(self, variable_cc_encoder_def_0):
+        self.variable_cc_encoder_def_0 = variable_cc_encoder_def_0
 
     def get_samp_rate(self):
         return self.samp_rate

@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(turbo_encoder.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(372d3b239a3f4428c4e2b3d67f549f80)                     */
+/* BINDTOOL_HEADER_FILE_HASH(827c55f1a49b0744f5757ace5d07efaf)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -37,10 +37,10 @@ void bind_turbo_encoder(py::module& m)
         m, "turbo_encoder", D(turbo_encoder))
 
         .def_static("make",
-            &turbo_encoder::make,
-            py::arg("frame_size"),
-            py::arg("enc_standard"),
-            D(turbo_encoder, make))
+             &turbo_encoder::make,
+             py::arg("frame_size"),
+             py::arg("enc_standard") = ::_enc_standard_t::LTE,
+             D(turbo_encoder, make))
 
 
         .def("set_frame_size",

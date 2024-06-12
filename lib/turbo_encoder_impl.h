@@ -28,7 +28,7 @@ private:
   unsigned int d_max_frame_size;
 
 public:
-  turbo_encoder_impl(int frame_size, enc_standard_t enc_standard);
+  turbo_encoder_impl(int frame_size, enc_standard_t enc_standard=LTE);
   ~turbo_encoder_impl() override;
 
   bool set_frame_size(unsigned int frame_size) override;

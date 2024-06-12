@@ -53,7 +53,7 @@ public:
     *        extended encoder interface.
     */
     static generic_encoder::sptr
-    make(int frame_size, enc_standard_t enc_standard);
+    make(int frame_size, enc_standard_t enc_standard=LTE);
 
     /*!
     * Sets the uncoded frame size to \p frame_size. If \p
