@@ -17,15 +17,23 @@
 namespace gr {
 namespace fec_dev {
 
-fec::generic_encoder::sptr turbo_encoder::make(int frame_size, enc_standard_t enc_standard)
+fec::generic_encoder::sptr turbo_encoder::make(int frame_size,
+                                               enc_standard_t standard,
+                                               enc_sub_type_t subencoder,
+                                               bool buffered,
+                                               std::vector<int> polys)
 {
-    return fec::generic_encoder::sptr(new turbo_encoder_impl(frame_size, enc_standard));
+    return fec::generic_encoder::sptr(new turbo_encoder_impl(frame_size, standard, subencoder, buffered, polys));
 }
 
 /*
 * The private constructor
 */
-turbo_encoder_impl::turbo_encoder_impl(int frame_size, enc_standard_t enc_standard)
+turbo_encoder_impl::turbo_encoder_impl(int frame_size,
+                                       enc_standard_t standard,
+                                       enc_sub_type_t subencoder,
+                                       bool buffered,
+                                       std::vector<int> polys)
     : generic_encoder("turbo_encoder")
 {
     d_max_frame_size = frame_size;

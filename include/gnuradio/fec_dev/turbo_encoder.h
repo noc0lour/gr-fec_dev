@@ -15,8 +15,13 @@
 
 typedef enum _enc_standard_t {
     LTE = 0,
-    CCSDS
+    CCSDS,
+    CUSTOM
 } enc_standard_t;
+
+typedef enum _enc_sub_type_t {
+    RSC = 0
+} enc_sub_type_t;
 
 namespace gr {
 namespace fec_dev {
@@ -39,21 +44,15 @@ public:
     * \param frame_size Number of bits per frame. If using in the
     *        tagged stream style, this is the maximum allowable
     *        number of bits per frame.
-    * \param pack Determines how to handle the input data stream
-    *        as packed or unpacked bits. If set to True, the
-    *        encoder's get_input_conversion will be set to
-    *        'pack', meaning that the data must be packed before
-    *        being sent to this encoder. Generally handled
-    *        through an extended encoder interface.
-    * \param packed_bits Determines how the output data stream is
-    *        handled. If set to True, the encoder's
-    *        get_output_conversion returns 'packed_bits', meaning
-    *        that the output data of the encoder is packed and
-    *        should be unpacked. Generally handled through an
-    *        extended encoder interface.
+    * \param enc_standard Select a standard (LTE or CCSDS) to
+    *        automatically set some parameters. kmc
+    * \param subencoder kmc
     */
-    static generic_encoder::sptr
-    make(int frame_size, enc_standard_t enc_standard=LTE);
+    static generic_encoder::sptr make(int frame_size,
+                                      enc_standard_t standard=LTE,
+                                      enc_sub_type_t subencoder=RSC,
+                                      bool buffered=true,
+                                      std::vector<int> polys={013,015});
 
     /*!
     * Sets the uncoded frame size to \p frame_size. If \p
