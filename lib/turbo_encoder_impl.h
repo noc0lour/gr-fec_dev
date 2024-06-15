@@ -26,6 +26,11 @@ private:
 
   unsigned int d_frame_size;
   unsigned int d_max_frame_size;
+  std::vector<int> d_polys;
+  enc_standard_t d_standard;
+  enc_sub_type_t d_subencoder;
+  bool d_buffered;
+  int d_output_size;
 
 public:
   turbo_encoder_impl(int frame_size,

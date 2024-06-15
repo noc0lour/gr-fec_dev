@@ -56,7 +56,7 @@ void bind_turbo_encoder(py::module& m)
              py::arg("enc_standard") = ::_enc_standard_t::LTE,
              py::arg("enc_sub_type") = ::_enc_sub_type_t::RSC,
              py::arg("buffered") = true,
-             py::arg("polys"),
+             py::arg("polys") = std::vector<int>{013, 015},
              D(turbo_encoder, make))
 
 
