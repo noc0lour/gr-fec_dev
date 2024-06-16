@@ -41,21 +41,6 @@ public:
     double rate() override;
 };
 
-template<typename B = int, typename R = float>
-class Decoder_turbo_gr : public aff3ct::module::Decoder_turbo<B, R>
-{
-  public:
-    Decoder_turbo_gr(const int& K,
-                    const int& N,
-                    const int& n_ite,
-                    const aff3ct::module::Decoder_SISO<B, R>& siso_n,
-                    const aff3ct::module::Decoder_SISO<B, R>& siso_i,
-                    const aff3ct::module::Interleaver<R>& pi,
-                    const bool buffered_encoding = true);
-
-    virtual Decoder_turbo_gr<B, R>* clone() const override;
-};
-
 } /* namespace fec */
 } /* namespace gr */
 

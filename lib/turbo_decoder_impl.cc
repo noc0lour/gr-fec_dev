@@ -83,28 +83,10 @@ void turbo_decoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     auto siso_n = aff3ct::module::Decoder_SISO<>(K, N);
     auto siso_i = siso_n;
 
-    auto decoder = std::unique_ptr<Decoder_turbo_gr<>>(new Decoder_turbo_gr<>(K, N, n_ite, siso_n, siso_i, pi, buffered_enc));
+    auto decoder = std::unique_ptr<aff3ct::factory::Decoder_turbo<>>(new aff3ct::factory::Decoder_turbo<>(K, N, n_ite, siso_n, siso_i, pi, buffered_enc));
     // decoder->decode_siho(in, out, -1);
+    // auto codec = std::unique_ptr<aff3ct::tools::Codec_turbo<>>(new aff3ct::tools::Codec_turbo<>(K,N);
     memcpy(out, in, d_frame_size*sizeof(char));
-}
-
-template <typename B, typename R>
-Decoder_turbo_gr<B, R>::Decoder_turbo_gr(const int& K,
-                                       const int& N,
-                                       const int& n_ite,
-                                       const aff3ct::module::Decoder_SISO<B, R>& siso_n,
-                                       const aff3ct::module::Decoder_SISO<B, R>& siso_i,
-                                       const aff3ct::module::Interleaver<R>& pi,
-                                       const bool buffered_encoding)
-: aff3ct::module::Decoder_turbo<B, R>(K, N, n_ite, siso_n, siso_i, pi, buffered_encoding)
-{
-    // Initialization code here if needed
-}
-
-template <typename B, typename R>
-Decoder_turbo_gr<B, R>* Decoder_turbo_gr<B, R>::clone() const
-{
-    return new Decoder_turbo_gr<B, R>(*this);
 }
 
 } /* namespace fec */
