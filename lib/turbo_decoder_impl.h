@@ -14,6 +14,7 @@
 #include <gnuradio/fec_dev/turbo_decoder.h>
 #include <map>
 #include <string>
+#include <aff3ct.hpp>
 
 namespace gr {
 namespace fec_dev {
