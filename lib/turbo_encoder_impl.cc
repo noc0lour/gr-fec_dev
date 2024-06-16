@@ -82,17 +82,12 @@ void turbo_encoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     int* out = (int*)outbuffer;
 
     int K = d_frame_size;
-    int trellis_size = 8;
-    // int N = 3*K + 4*std::log2(trellis_size);
-    int n_ff = (int)std::floor(std::log2(d_polys[0]));
-    // int N = 2*K + 2*n_ff;
-    // int N_ = 2 * (K+std::log2(trellis_size));
-    // int N = 2 * (N_+std::log2(trellis_size));
-    int N_enco_n = 2 * (K+n_ff);
-    int N_enco_i = 2 * (N_enco_n+n_ff);
+    int trellis_size = 8; //LTE
+
+    int N_rsc = 2 * (K+std::log2(trellis_size));
+    auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<>(K, N_rsc, d_buffered, d_polys);
+    auto enco_i = enco_n;
     
-    auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<>(K, N_enco_n, d_buffered, d_polys);
-    auto enco_i = aff3ct::module::Encoder_RSC_generic_sys<>(N_enco_n, N_enco_i, d_buffered, d_polys);
     aff3ct::tools::Interleaver_core_LTE<> core(K);
 	aff3ct::module::Interleaver<int32_t> pi(core);
 
