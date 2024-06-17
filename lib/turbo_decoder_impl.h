@@ -56,6 +56,16 @@ public:
 //     virtual Decoder_turbo_gr<B, R>* clone() const override;
 // };
 
+// template<typename B = int, typename R = float>
+// class Decoder_SISO_gr : public aff3ct::module::Decoder_SISO<B, R>
+// {
+//   public:
+//     Decoder_SISO_gr(const int& K,
+//                     const int& N);
+
+//     virtual Decoder_SISO_gr<B, R>* clone() const override;
+// };
+
 } /* namespace fec */
 } /* namespace gr */
 

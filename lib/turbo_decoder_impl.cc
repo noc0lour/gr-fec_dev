@@ -80,19 +80,19 @@ void turbo_decoder_impl::generic_work(const void* inbuffer, void* outbuffer)
 	aff3ct::module::Interleaver<float> pi(core);
 
     bool buffered_enc = true;
-    // auto siso_n = aff3ct::module::Decoder_SISO<>(K, N);
-    // auto siso_i = siso_n;
-    int N_rsc = 2 * (K+std::log2(trellis_size));
-    auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<>(K, N_rsc, true, {013, 015});
-    auto enco_i = enco_n;
+    auto siso_n = aff3ct::module::Decoder_SISO<>(K, N);
+    auto siso_i = siso_n;
+    // int N_rsc = 2 * (K+std::log2(trellis_size));
+    // auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<>(K, N_rsc, true, {013, 015});
+    // auto enco_i = enco_n;
 
-    auto trellis_n = enco_n.get_trellis();
-    auto trellis_i = enco_i.get_trellis();
-    auto dec_n = aff3ct::module::Decoder_RSC_BCJR_seq_generic_std<>(K, trellis_n, buffered_enc);
-    auto dec_i = aff3ct::module::Decoder_RSC_BCJR_seq_generic_std<>(K, trellis_i, buffered_enc);
+    // auto trellis_n = enco_n.get_trellis();
+    // auto trellis_i = enco_i.get_trellis();
+    // auto dec_n = aff3ct::module::Decoder_RSC_BCJR_seq_generic_std<>(K, trellis_n, buffered_enc);
+    // auto dec_i = aff3ct::module::Decoder_RSC_BCJR_seq_generic_std<>(K, trellis_i, buffered_enc);
 
 
-    auto decoder = std::unique_ptr<aff3ct::module::Decoder_turbo<>>(new aff3ct::module::Decoder_turbo<>(K, N, n_ite, dec_n, dec_i, pi, buffered_enc));
+    auto decoder = std::unique_ptr<aff3ct::module::Decoder_turbo<>>(new aff3ct::module::Decoder_turbo<>(K, N, n_ite, siso_n, siso_i, pi, buffered_enc));
     decoder->decode_siho(in, out, -1);
     // auto codec = std::unique_ptr<aff3ct::tools::Codec_turbo<>>(new aff3ct::tools::Codec_turbo<>(K,N);
     // memcpy(out, in, d_frame_size*sizeof(char));
@@ -115,6 +115,20 @@ void turbo_decoder_impl::generic_work(const void* inbuffer, void* outbuffer)
 // Decoder_turbo_gr<B, R>* Decoder_turbo_gr<B, R>::clone() const
 // {
 //     return new Decoder_turbo_gr<B, R>(*this);
+// }
+
+// template <typename B, typename R>
+// Decoder_SISO_gr<B, R>::Decoder_SISO_gr(const int& K,
+//                                        const int& N)
+// : aff3ct::module::Decoder_SISO<B, R>(K, N)
+// {
+//     // Initialization code here if needed
+// }
+
+// template <typename B, typename R>
+// Decoder_SISO_gr<B, R>* Decoder_SISO_gr<B, R>::clone() const
+// {
+//     return new Decoder_SISO_gr<B, R>(*this);
 // }
 
 } /* namespace fec */
