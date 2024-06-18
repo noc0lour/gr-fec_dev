@@ -73,7 +73,7 @@ class fecapi_decoders(gr.top_block, Qt.QWidget):
         self.k = k = 7
         self.variable_cc_encoder_def_0 = variable_cc_encoder_def_0 = fec.cc_encoder_make(2048,7, 2, [79,109], 0, fec.CC_STREAMING, False)
         self.samp_rate = samp_rate = 50000
-        self.enc_turbo = enc_turbo = fec_dev.turbo_encoder_make(2048)
+        self.enc_turbo = enc_turbo = fec_dev.turbo_encoder_make(272)
         self.enc_rep = enc_rep = fec.repetition_encoder_make((frame_size*8), 3)
         self.enc_dummy = enc_dummy = fec.dummy_encoder_make((frame_size*8))
         self.enc_ccsds = enc_ccsds = fec.ccsds_encoder_make((frame_size*8),0, fec.CC_TAILBITING)
@@ -81,6 +81,8 @@ class fecapi_decoders(gr.top_block, Qt.QWidget):
         self.dec_rep = dec_rep = fec.repetition_decoder.make((frame_size*8),3, 0.5)
         self.dec_dummy = dec_dummy = fec.dummy_decoder.make((frame_size*8))
         self.dec_cc = dec_cc = fec.cc_decoder.make((frame_size*8),k, rate, polys, 0, (-1), fec.CC_TAILBITING, False)
+        self.constellation = constellation = digital.constellation_bpsk().base()
+        self.constellation.set_npwr(1.0)
 
         ##################################################
         # Blocks
@@ -136,11 +138,12 @@ class fecapi_decoders(gr.top_block, Qt.QWidget):
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
         self.fec_extended_encoder_1_0_0 = fec.extended_encoder(encoder_obj_list=enc_turbo, threading='ordinary', puncpat=puncpat)
         self.fec_extended_decoder_0_1_0 = fec.extended_decoder(decoder_obj_list=dec_turbo, threading= None, ann=None, puncpat=puncpat, integration_period=10000)
-        self.digital_map_bb_0_0_0_0 = digital.map_bb([-1, 1])
+        self.digital_constellation_encoder_bc_0 = digital.constellation_encoder_bc(constellation)
         self.blocks_vector_source_x_0_1_0 = blocks.vector_source_b((frame_size//15)*[0, 0, 1, 0, 3, 0, 7, 0, 15, 0, 31, 0, 63, 0, 127], True, 1, [])
+        self.blocks_unpack_k_bits_bb_0_0 = blocks.unpack_k_bits_bb(8)
         self.blocks_unpack_k_bits_bb_0 = blocks.unpack_k_bits_bb(8)
         self.blocks_throttle2_0 = blocks.throttle( gr.sizeof_char*1, samp_rate, True, 0 if "auto" == "auto" else max( int(float(0.1) * samp_rate) if "auto" == "time" else int(0.1), 1) )
-        self.blocks_char_to_float_0_2_0 = blocks.char_to_float(1, 1)
+        self.blocks_complex_to_real_0 = blocks.complex_to_real(1)
         self.blocks_char_to_float_0_1 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_0_0_0 = blocks.char_to_float(1, 1)
 
@@ -150,14 +153,15 @@ class fecapi_decoders(gr.top_block, Qt.QWidget):
         ##################################################
         self.connect((self.blocks_char_to_float_0_0_0_0, 0), (self.qtgui_time_sink_x_0, 1))
         self.connect((self.blocks_char_to_float_0_1, 0), (self.qtgui_time_sink_x_0, 0))
-        self.connect((self.blocks_char_to_float_0_2_0, 0), (self.fec_extended_decoder_0_1_0, 0))
+        self.connect((self.blocks_complex_to_real_0, 0), (self.fec_extended_decoder_0_1_0, 0))
         self.connect((self.blocks_throttle2_0, 0), (self.blocks_unpack_k_bits_bb_0, 0))
         self.connect((self.blocks_unpack_k_bits_bb_0, 0), (self.blocks_char_to_float_0_1, 0))
         self.connect((self.blocks_unpack_k_bits_bb_0, 0), (self.fec_extended_encoder_1_0_0, 0))
+        self.connect((self.blocks_unpack_k_bits_bb_0_0, 0), (self.blocks_char_to_float_0_0_0_0, 0))
         self.connect((self.blocks_vector_source_x_0_1_0, 0), (self.blocks_throttle2_0, 0))
-        self.connect((self.digital_map_bb_0_0_0_0, 0), (self.blocks_char_to_float_0_2_0, 0))
-        self.connect((self.fec_extended_decoder_0_1_0, 0), (self.blocks_char_to_float_0_0_0_0, 0))
-        self.connect((self.fec_extended_encoder_1_0_0, 0), (self.digital_map_bb_0_0_0_0, 0))
+        self.connect((self.digital_constellation_encoder_bc_0, 0), (self.blocks_complex_to_real_0, 0))
+        self.connect((self.fec_extended_decoder_0_1_0, 0), (self.blocks_unpack_k_bits_bb_0_0, 0))
+        self.connect((self.fec_extended_encoder_1_0_0, 0), (self.digital_constellation_encoder_bc_0, 0))
 
 
     def closeEvent(self, event):
@@ -260,6 +264,13 @@ class fecapi_decoders(gr.top_block, Qt.QWidget):
 
     def set_dec_cc(self, dec_cc):
         self.dec_cc = dec_cc
+
+    def get_constellation(self):
+        return self.constellation
+
+    def set_constellation(self, constellation):
+        self.constellation = constellation
+        self.digital_constellation_encoder_bc_0.set_constellation(self.constellation)
 
 
 
