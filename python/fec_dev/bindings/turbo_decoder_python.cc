@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(turbo_decoder.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(622cf97e3778a0a5788de26078cc47c5)                     */
+/* BINDTOOL_HEADER_FILE_HASH(444101d93f3f52ce4cd2db48a94cb0ad)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -32,6 +32,20 @@ void bind_turbo_decoder(py::module& m)
 
     using turbo_decoder = ::gr::fec_dev::turbo_decoder;
 
+    py::enum_<::_enc_standard_t>(m, "_enc_standard_t")
+        .value("LTE", ::LTE)   // 0
+        .value("CCSDS", ::CCSDS) // 1
+        .value("CUSTOM", ::CUSTOM) // 2
+        .export_values();
+
+    py::implicitly_convertible<int, ::_enc_standard_t>();
+
+    py::enum_<::_enc_sub_type_t>(m, "_enc_sub_type_t")
+        .value("RSC", ::RSC)   // 0
+        .export_values();
+
+    py::implicitly_convertible<int, ::_enc_sub_type_t>();
+
 
     py::class_<turbo_decoder, gr::fec::generic_decoder, std::shared_ptr<turbo_decoder>>(
         m, "turbo_decoder", D(turbo_decoder))
@@ -42,6 +56,12 @@ void bind_turbo_decoder(py::module& m)
         .def_static("make",
                     &turbo_decoder::make,
                     py::arg("frame_size"),
+                    py::arg("enc_standard") = ::_enc_standard_t::LTE,
+                    py::arg("enc_sub_type") = ::_enc_sub_type_t::RSC,
+                    py::arg("buffered") = true,
+                    py::arg("polys") = std::vector<int>{013, 015},
+                    py::arg("trellis_size") = 8,
+                    py::arg("n_iterations") = 6,
                     D(turbo_decoder, make))
 
 

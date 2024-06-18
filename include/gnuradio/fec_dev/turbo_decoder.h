@@ -13,6 +13,16 @@
 #include <map>
 #include <string>
 
+typedef enum _enc_standard_t {
+    LTE = 0,
+    CCSDS,
+    CUSTOM
+} enc_standard_t;
+
+typedef enum _enc_sub_type_t {
+    RSC = 0
+} enc_sub_type_t;
+
 namespace gr {
 namespace fec_dev {
 
@@ -35,7 +45,13 @@ public:
     *        tagged stream style, this is the maximum allowable
     *        number of bits per frame.
     */
-    static generic_decoder::sptr make(int frame_size);
+    static generic_decoder::sptr make(int frame_size,
+                                      enc_standard_t standard=LTE,
+                                      enc_sub_type_t subencoder=RSC,
+                                      bool buffered=true,
+                                      std::vector<int> polys={013,015},
+                                      int trellis_size = 8,
+                                      int n_iterations = 6);
 
     /*!
     * Sets the uncoded frame size to \p frame_size. If \p

@@ -32,9 +32,22 @@ private:
 
     unsigned int d_max_frame_size;
     unsigned int d_frame_size;
+    std::vector<int> d_polys;
+    enc_standard_t d_standard;
+    enc_sub_type_t d_subencoder;
+    bool d_buffered;
+    int d_input_size;
+    int d_trellis_size;
+    int d_n_iterations;
 
 public:
-    turbo_decoder_impl(int frame_size);
+    turbo_decoder_impl(int frame_size,
+                      enc_standard_t standard=LTE,
+                      enc_sub_type_t subencoder=RSC,
+                      bool buffered=true,
+                      std::vector<int> polys={013,015},
+                      int trellis_size = 8,
+                      int n_iterations = 6);
     ~turbo_decoder_impl() override;
 
     bool set_frame_size(unsigned int frame_size) override;

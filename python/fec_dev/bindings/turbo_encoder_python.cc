@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(turbo_encoder.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(ed068d0263a3069b94559f7bc89ace74)                     */
+/* BINDTOOL_HEADER_FILE_HASH(c096abd1cbc52cf8b47c5e2a4fb44cd0)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -29,7 +29,6 @@ namespace py = pybind11;
 
 void bind_turbo_encoder(py::module& m)
 {
-
     using turbo_encoder = ::gr::fec_dev::turbo_encoder;
 
     py::enum_<::_enc_standard_t>(m, "_enc_standard_t")
@@ -57,6 +56,7 @@ void bind_turbo_encoder(py::module& m)
              py::arg("enc_sub_type") = ::_enc_sub_type_t::RSC,
              py::arg("buffered") = true,
              py::arg("polys") = std::vector<int>{013, 015},
+             py::arg("trellis_size") = 8,
              D(turbo_encoder, make))
 
 

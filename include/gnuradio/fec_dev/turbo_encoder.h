@@ -44,15 +44,16 @@ public:
     * \param frame_size Number of bits per frame. If using in the
     *        tagged stream style, this is the maximum allowable
     *        number of bits per frame.
-    * \param enc_standard Select a standard (LTE or CCSDS) to
+    * \param standard Select a standard (LTE or CCSDS) to
     *        automatically set some parameters. kmc
-    * \param subencoder kmc
+    * \param subencoder 
     */
     static generic_encoder::sptr make(int frame_size,
                                       enc_standard_t standard=LTE,
                                       enc_sub_type_t subencoder=RSC,
                                       bool buffered=true,
-                                      std::vector<int> polys={013,015});
+                                      std::vector<int> polys={013,015},
+                                      int trellis_size = 8);
 
     /*!
     * Sets the uncoded frame size to \p frame_size. If \p
