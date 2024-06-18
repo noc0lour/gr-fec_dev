@@ -10,18 +10,9 @@
 
 #include <gnuradio/fec/api.h>
 #include <gnuradio/fec/generic_encoder.h>
+#include <gnuradio/fec_dev/turbo_common.h>
 #include <map>
 #include <string>
-
-typedef enum _enc_standard_t {
-    LTE = 0,
-    CCSDS,
-    CUSTOM
-} enc_standard_t;
-
-typedef enum _enc_sub_type_t {
-    RSC = 0
-} enc_sub_type_t;
 
 namespace gr {
 namespace fec_dev {

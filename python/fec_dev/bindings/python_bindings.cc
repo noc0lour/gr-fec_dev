@@ -6,7 +6,6 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
  */
-
 #include <pybind11/pybind11.h>
 
 #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
@@ -23,6 +22,7 @@ namespace py = pybind11;
 // BINDING_FUNCTION_PROTOTYPES(
     void bind_turbo_encoder(py::module& m);
     void bind_turbo_decoder(py::module& m);
+    void bind_turbo_common(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -51,6 +51,7 @@ PYBIND11_MODULE(fec_dev_python, m)
     // Please do not delete
     /**************************************/
     // BINDING_FUNCTION_CALLS(
+    bind_turbo_common(m);
     bind_turbo_encoder(m);
     bind_turbo_decoder(m);
     // ) END BINDING_FUNCTION_CALLS
