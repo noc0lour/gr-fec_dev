@@ -21,8 +21,6 @@ class FEC_API turbo_encoder_impl : public turbo_encoder
 private:
   // plug into the generic fec api
   void generic_work(const void* inbuffer, void* outbuffer) override;
-  int get_output_size() override;
-  int get_input_size() override;
 
   unsigned int d_frame_size;
   unsigned int d_max_frame_size;
@@ -44,6 +42,8 @@ public:
 
   bool set_frame_size(unsigned int frame_size) override;
   double rate() override;
+  int get_output_size() override;
+  int get_input_size() override;
 };
 
 } // namespace fec_dev
