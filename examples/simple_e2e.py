@@ -26,8 +26,6 @@ class simple_fg(gr.top_block):
         constellation = digital.constellation_bpsk()
         self.mapper = digital.constellation_encoder_bc(constellation)
         self.enc_turbo = enc_turbo = fec_dev.turbo_encoder.make(frame_size * 8)
-        print(self.enc_turbo.get_output_size())
-        print(self.enc_turbo.get_input_size())
         self.fec_encoder = fec.encoder(enc_turbo, input_item_size=gr.sizeof_char, output_item_size=gr.sizeof_char)
         self.dec_turbo = dec_turbo = fec_dev.turbo_decoder.make(frame_size * 8)
         self.fec_decoder = fec.decoder(dec_turbo, input_item_size=gr.sizeof_float, output_item_size=gr.sizeof_char)
@@ -43,10 +41,9 @@ class simple_fg(gr.top_block):
         self.dec_b = blocks.vector_sink_b()
         self.null = blocks.null_sink(gr.sizeof_float)
 
-
         self.connect((self.source, 0),(self.throttle,0))
         self.connect((self.throttle, 0),(self.unpack, 0))
-        self.connect((self.unpack, 0), (self.fec_encoder, 0)),
+        self.connect((self.unpack, 0), (self.fec_encoder, 0))
         self.connect((self.fec_encoder), (self.mapper, 0))
         # self.connect((self.unpack, 0), (self.mapper, 0))
         self.connect((self.mapper,0), (self.complex_to_real,0))
@@ -68,18 +65,21 @@ def main():
     src_data = np.array(fg.src_b.data())
     dec_data = np.array(fg.dec_b.data())
 
-    # print(fg.src_b.data())
+    print('here')
+    print(fg.src_b.data())
     # print(fg.enc_b.data())
-    # print(fg.dec_b.data())
+    print('here2')
+    print(fg.dec_b.data())
+    print('here3')
     # result = fg.sink.data()
     # result_f = fg.sink_f.data()
     # print(result_f)
     # print(result)
     # print(src_data - dec_data)
-    print(src_data[:100] == dec_data[:100])
-    print(dec_data.reshape(-1,8)[:15,:])
-    print(src_data.shape)
-    print(dec_data.shape)
+    # print(src_data[:100] == dec_data[:100])
+    # print(dec_data.reshape(-1,8)[:15,:])
+    # print(src_data.shape)
+    # print(dec_data.shape)
     return True
 
 if __name__ == "__main__":

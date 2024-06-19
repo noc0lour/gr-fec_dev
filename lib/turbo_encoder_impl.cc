@@ -88,8 +88,7 @@ void turbo_encoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     aff3ct::tools::Interleaver_core_LTE<> core(d_frame_size);
     aff3ct::module::Interleaver<int32_t> pi(core);
 
-    int N_turbo = d_output_size;
-    auto encoder = std::unique_ptr<aff3ct::module::Encoder_turbo<>>(new aff3ct::module::Encoder_turbo<>(d_frame_size, N_turbo, enco_n, enco_i, pi));;
+    auto encoder = std::unique_ptr<aff3ct::module::Encoder_turbo<>>(new aff3ct::module::Encoder_turbo<>(d_frame_size, d_output_size, enco_n, enco_i, pi));;
     encoder->encode(in, out);
 }
 
