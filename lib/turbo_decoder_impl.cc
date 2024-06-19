@@ -45,13 +45,13 @@ turbo_decoder_impl::turbo_decoder_impl(int frame_size,
     // Set max frame size here; all buffers and settings will be
     // based on this value.
     d_max_frame_size = frame_size;
-    set_frame_size(frame_size);
     d_standard = standard;
     d_subencoder = subencoder;
     d_buffered = buffered;
     d_polys = polys;
     d_trellis_size = trellis_size;
     d_n_iterations = n_iterations;
+    set_frame_size(frame_size);
 }
 
 turbo_decoder_impl::~turbo_decoder_impl() {}
@@ -89,7 +89,7 @@ void turbo_decoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     int* out = (int*)outbuffer;
 
     aff3ct::tools::Interleaver_core_LTE<> core(d_frame_size);
-	aff3ct::module::Interleaver<float> pi(core);
+    aff3ct::module::Interleaver<float> pi(core);
 
     int N_rsc = 2 * (d_frame_size+std::log2(d_trellis_size));
     auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<>(d_frame_size, N_rsc, true, {013, 015});
@@ -98,11 +98,12 @@ void turbo_decoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     auto trellis_n = enco_n.get_trellis();
     auto trellis_i = trellis_n;
     
-    auto dec_n = aff3ct::module::Decoder_RSC_BCJR_seq_generic_std<>(d_frame_size, trellis_n, d_buffered);
-    auto dec_i = aff3ct::module::Decoder_RSC_BCJR_seq_generic_std<>(d_frame_size, trellis_i, d_buffered);
+    auto dec_n = aff3ct::module::Decoder_RSC_BCJR_seq_fast<>(d_frame_size, trellis_n, d_buffered);
+    auto dec_i = aff3ct::module::Decoder_RSC_BCJR_seq_fast<>(d_frame_size, trellis_i, d_buffered);
 
     auto decoder = std::unique_ptr<aff3ct::module::Decoder_turbo_fast<>>(new aff3ct::module::Decoder_turbo_fast<>(d_frame_size, d_input_size, d_n_iterations, dec_n, dec_i, pi, d_buffered));
     decoder->decode_siho(in, out, -1);
+    std::cout << "decoded" << std::endl;
 }
 
 } /* namespace fec */
