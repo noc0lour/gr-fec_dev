@@ -27,6 +27,9 @@ gr_python_install(FILES __init__.py DESTINATION ${GR_PYTHON_DIR}/gnuradio/fec_de
 include(GrTest)
 
 set(GR_TEST_TARGET_DEPS gnuradio-fec_dev)
+file(GLOB py_qa_test_files "qa_*.py")
+
+
 
 # Create a package directory that tests can import. It includes everything
 # from `python/`.
