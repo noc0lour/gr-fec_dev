@@ -22,23 +22,17 @@ namespace fec_dev {
 class FEC_API turbo_decoder_impl : public turbo_decoder
 {
 private:
-    // plug into the generic fec api
-    void generic_work(const void* inbuffer, void* outbuffer) override;
     int get_output_size() override;
     int get_input_size() override;
     int get_input_item_size() override;
     const char* get_input_conversion() override;
-    // const char* get_output_conversion();
 
     unsigned int d_max_frame_size;
     unsigned int d_frame_size;
-    std::vector<int> d_polys;
-    enc_standard_t d_standard;
-    enc_sub_type_t d_subencoder;
-    bool d_buffered;
     int d_input_size;
     int d_trellis_size;
-    int d_n_iterations;
+    std::shared_ptr<aff3ct::tools::Interleaver_core<>> d_interleaver_core;
+    std::unique_ptr<aff3ct::module::Decoder_turbo<>> d_decoder;
 
 public:
     turbo_decoder_impl(int frame_size,
@@ -52,6 +46,7 @@ public:
 
     bool set_frame_size(unsigned int frame_size) override;
     double rate() override;
+    void generic_work(const void* inbuffer, void* outbuffer) override;
 };
 
 } /* namespace fec */
