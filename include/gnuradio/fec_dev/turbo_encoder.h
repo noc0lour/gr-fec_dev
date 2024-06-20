@@ -59,7 +59,6 @@ public:
     * Returns the coding rate of this encoder (it will always be 1).
     */
     double rate() override = 0;
-
 };
     
 } // namespace fec_dev
