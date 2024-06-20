@@ -43,14 +43,14 @@ fec::generic_encoder::sptr turbo_encoder::make(int frame_size,
         set_frame_size(frame_size);
 
         int N_rsc = 2 * (frame_size+std::log2(trellis_size));
-        auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<>(frame_size, N_rsc, buffered, polys);
-        auto enco_i = enco_n;
+        d_enco_n = std::make_shared<aff3ct::module::Encoder_RSC_generic_sys<>>(frame_size, N_rsc, buffered, polys);
+        d_enco_i = std::make_shared<aff3ct::module::Encoder_RSC_generic_sys<>>(frame_size, N_rsc, buffered, polys);
         
         d_interleaver_core = std::make_shared<aff3ct::tools::Interleaver_core_LTE<>>(frame_size);
-        auto pi = std::make_shared<aff3ct::module::Interleaver<int32_t>>(*d_interleaver_core);
+        d_pi = std::make_shared<aff3ct::module::Interleaver<int32_t>>(*d_interleaver_core);
 
         std::cout << "Creating d_encoder" << std::endl;
-        d_encoder = std::make_unique<aff3ct::module::Encoder_turbo<>>(frame_size, d_output_size, enco_n, enco_i, *pi);
+        d_encoder = std::make_unique<aff3ct::module::Encoder_turbo<>>(frame_size, d_output_size, *d_enco_n, *d_enco_i, *d_pi);
         std::cout << "d_encoder created successfully" << std::endl;
 
         // Call a method to verify initialization
@@ -98,6 +98,7 @@ void turbo_encoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     int* out = (int*)outbuffer;
 
     try {
+        std::cout << "calling d_encoder->tail_length() " << d_encoder->tail_length() << std::endl;
         d_encoder->encode(in, out);
     }
     catch (const std::exception &e) {

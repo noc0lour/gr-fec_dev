@@ -23,7 +23,10 @@ private:
   unsigned int d_max_frame_size;
   int d_output_size;
   int d_trellis_size;
+  std::shared_ptr<aff3ct::module::Encoder_RSC_generic_sys<>> d_enco_n;
+  std::shared_ptr<aff3ct::module::Encoder_RSC_generic_sys<>> d_enco_i;
   std::shared_ptr<aff3ct::tools::Interleaver_core<>> d_interleaver_core;
+  std::shared_ptr<aff3ct::module::Interleaver<int32_t>> d_pi;
   std::unique_ptr<aff3ct::module::Encoder_turbo<>> d_encoder;
 
 public:
