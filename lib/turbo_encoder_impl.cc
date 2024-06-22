@@ -97,9 +97,12 @@ void turbo_encoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     const int* in = (const int*)inbuffer;
     int* out = (int*)outbuffer;
 
+    std::cout << "Address out: " << static_cast<const void*>(out) << std::endl;
+
     try {
         std::cout << "calling d_encoder->tail_length() " << d_encoder->tail_length() << std::endl;
         d_encoder->encode(in, out);
+        std::cout << "Address out: " << static_cast<const void*>(out) << std::endl;
     }
     catch (const std::exception &e) {
         std::cerr << "Exception during encode: " << e.what() << std::endl;
