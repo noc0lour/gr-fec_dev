@@ -78,18 +78,18 @@ double turbo_encoder_impl::rate() { return d_frame_size / d_output_size; }
 
 void turbo_encoder_impl::generic_work(const void* inbuffer, void* outbuffer)
 {
-    const int* in = (const int*)inbuffer;
-    int* out = (int*)outbuffer;
+    const signed char* in = (const signed char*)inbuffer;
+    signed char* out = (signed char*)outbuffer;
 
     int N_rsc = 2 * (d_frame_size+std::log2(d_trellis_size));
-    auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<>(d_frame_size, N_rsc, d_buffered, d_polys);
+    auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<B_8>(d_frame_size, N_rsc, d_buffered, d_polys);
     auto enco_i = enco_n;
-    
-    aff3ct::tools::Interleaver_core_LTE<> core(d_frame_size);
-    aff3ct::module::Interleaver<int32_t> pi(core);
 
+
+    aff3ct::tools::Interleaver_core_LTE<> core(d_frame_size);
+    aff3ct::module::Interleaver<B_8> pi(core);
     int N_turbo = d_output_size;
-    auto encoder = std::unique_ptr<aff3ct::module::Encoder_turbo<>>(new aff3ct::module::Encoder_turbo<>(d_frame_size, N_turbo, enco_n, enco_i, pi));;
+    auto encoder = std::unique_ptr<aff3ct::module::Encoder_turbo<B_8>>(new aff3ct::module::Encoder_turbo<B_8>(d_frame_size, N_turbo, enco_n, enco_i, pi));;
     encoder->encode(in, out);
 }
 
