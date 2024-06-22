@@ -46,8 +46,8 @@ turbo_decoder_impl::turbo_decoder_impl(int frame_size,
 {
     set_frame_size(frame_size);
 
-    aff3ct::tools::Interleaver_core_LTE<> core(frame_size);
-    aff3ct::module::Interleaver<Q_8> pi(core);
+    d_interleaver_core = std::make_unique<aff3ct::tools::Interleaver_core_LTE<>>(frame_size);
+    d_pi = std::make_unique<aff3ct::module::Interleaver<B_8>>(*d_interleaver_core);
 
     int N_rsc = 2 * (frame_size+std::log2(trellis_size));
     auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<B_8>(frame_size, N_rsc, buffered, polys);
@@ -59,7 +59,7 @@ turbo_decoder_impl::turbo_decoder_impl(int frame_size,
     auto dec_n = aff3ct::module::Decoder_RSC_BCJR_seq_fast<B_8, Q_8>(frame_size, trellis_n, buffered);
     auto dec_i = aff3ct::module::Decoder_RSC_BCJR_seq_fast<B_8, Q_8>(frame_size, trellis_i, buffered);
 
-    d_decoder = std::make_unique<aff3ct::module::Decoder_turbo_fast<B_8, Q_8>>(frame_size, d_input_size, n_iterations, dec_n, dec_i, pi, buffered);
+    d_decoder = std::make_unique<aff3ct::module::Decoder_turbo_fast<B_8, Q_8>>(frame_size, d_input_size, n_iterations, dec_n, dec_i, *d_pi, buffered);
 }
 
 turbo_decoder_impl::~turbo_decoder_impl() {}

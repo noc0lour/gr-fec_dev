@@ -45,7 +45,7 @@ class simple_fg(gr.top_block):
         self.connect((self.mapper,0), (self.complex_to_real,0))
         self.connect((self.complex_to_real, 0), (self.multiply, 0))
         self.connect((self.multiply, 0), (self.fec_decoder, 0))
-        self.connect((self.multiply, 0), (self.null, 0))
+        # self.connect((self.multiply, 0), (self.null, 0))
 
         self.connect((self.unpack, 0),(self.src_b, 0))
         self.connect((self.fec_encoder, 0),(self.enc_b, 0))
