@@ -11,6 +11,8 @@
 #include <gnuradio/fec_dev/turbo_encoder.h>
 #include <map>
 #include <string>
+
+#include "Tools/types.h"
 #include "Module/Encoder/RSC/Encoder_RSC_generic_sys.hpp"
 #include "Tools/Interleaver/Interleaver_core.hpp"
 #include "Tools/Interleaver/LTE/Interleaver_core_LTE.hpp"
@@ -26,7 +28,9 @@ private:
   unsigned int d_max_frame_size;
   int d_output_size;
   int d_trellis_size;
-  std::unique_ptr<aff3ct::module::Encoder_turbo<>> d_encoder;
+  std::unique_ptr<aff3ct::module::Encoder_turbo<B_8>> d_encoder;
+  std::unique_ptr<aff3ct::tools::Interleaver_core_LTE<>> d_interleaver_core;
+  std::unique_ptr<aff3ct::module::Interleaver<B_8>> d_pi;
 
 public:
   turbo_encoder_impl(int frame_size,

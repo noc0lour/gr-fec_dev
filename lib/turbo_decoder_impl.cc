@@ -59,7 +59,7 @@ turbo_decoder_impl::turbo_decoder_impl(int frame_size,
     auto dec_n = aff3ct::module::Decoder_RSC_BCJR_seq_fast<B_8, Q_8>(frame_size, trellis_n, buffered);
     auto dec_i = aff3ct::module::Decoder_RSC_BCJR_seq_fast<B_8, Q_8>(frame_size, trellis_i, buffered);
 
-    auto decoder = std::unique_ptr<aff3ct::module::Decoder_turbo_fast<B_8, Q_8>>(new aff3ct::module::Decoder_turbo_fast<B_8, Q_8>(frame_size, d_input_size, n_iterations, dec_n, dec_i, pi, buffered));
+    d_decoder = std::make_unique<aff3ct::module::Decoder_turbo_fast<B_8, Q_8>>(frame_size, d_input_size, n_iterations, dec_n, dec_i, pi, buffered);
 }
 
 turbo_decoder_impl::~turbo_decoder_impl() {}
@@ -100,7 +100,7 @@ void turbo_decoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     auto quant = aff3ct::module::Quantizer<float,Q_8>(d_input_size);
     quant.process(in, my_quant_input.data());
 
-    decoder->decode_siho(my_quant_input.data(), out, -1);
+    d_decoder->decode_siho(my_quant_input.data(), out, -1);
 }
 
 } /* namespace fec */

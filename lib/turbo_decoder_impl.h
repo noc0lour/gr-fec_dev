@@ -14,6 +14,9 @@
 #include <gnuradio/fec_dev/turbo_decoder.h>
 #include <map>
 #include <string>
+
+#include "Tools/types.h"
+#include "Module/Quantizer/Quantizer.hpp"
 #include "Module/Encoder/RSC/Encoder_RSC_generic_sys.hpp"
 #include "Tools/Interleaver/Interleaver_core.hpp"
 #include "Tools/Interleaver/LTE/Interleaver_core_LTE.hpp"
@@ -36,7 +39,7 @@ private:
     unsigned int d_frame_size;
     int d_input_size;
     int d_trellis_size;
-    std::unique_ptr<aff3ct::module::Decoder_turbo<>> d_decoder;
+    std::unique_ptr<aff3ct::module::Decoder_turbo<B_8, Q_8>> d_decoder;
 
 public:
     turbo_decoder_impl(int frame_size,
