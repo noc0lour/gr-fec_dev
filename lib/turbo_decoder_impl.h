@@ -17,6 +17,7 @@
 
 #include "Tools/types.h"
 #include "Module/Quantizer/Quantizer.hpp"
+#include "Module/Quantizer/Pow2/Quantizer_pow2_fast.hpp"
 #include "Module/Encoder/RSC/Encoder_RSC_generic_sys.hpp"
 #include "Tools/Interleaver/Interleaver_core.hpp"
 #include "Tools/Interleaver/LTE/Interleaver_core_LTE.hpp"

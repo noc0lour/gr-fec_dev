@@ -97,6 +97,7 @@ void turbo_encoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     signed char* out = (signed char*)outbuffer;
 
     d_encoder->encode(in, out);
+    std::cout << "encoded" << std::endl;
 }
 
 } /* namespace fec_dev */

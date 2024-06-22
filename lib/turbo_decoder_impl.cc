@@ -97,8 +97,8 @@ void turbo_decoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     B_8* out = (B_8*)outbuffer;
 
     auto my_quant_input =  std::vector<Q_8>(d_input_size);
-    auto quant = aff3ct::module::Quantizer<float,Q_8>(d_input_size);
-    quant.process(in, my_quant_input.data());
+    auto quant = aff3ct::module::Quantizer_pow2_fast<float,Q_8>(d_input_size, 6);
+    quant.process(in, my_quant_input.data(), -1);
 
     d_decoder->decode_siho(my_quant_input.data(), out, -1);
 }

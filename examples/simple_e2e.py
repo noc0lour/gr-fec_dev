@@ -44,28 +44,25 @@ class simple_fg(gr.top_block):
         self.connect((self.fec_encoder), (self.mapper, 0))
         self.connect((self.mapper,0), (self.complex_to_real,0))
         self.connect((self.complex_to_real, 0), (self.multiply, 0))
-        # self.connect((self.multiply, 0), (self.fec_decoder, 0))
+        self.connect((self.multiply, 0), (self.fec_decoder, 0))
         self.connect((self.multiply, 0), (self.null, 0))
 
         self.connect((self.unpack, 0),(self.src_b, 0))
         self.connect((self.fec_encoder, 0),(self.enc_b, 0))
-        # self.connect((self.fec_decoder, 0),(self.dec_b, 0))
+        self.connect((self.fec_decoder, 0),(self.dec_b, 0))
 
 def main():
     fg = simple_fg()
     fg.start()
     fg.wait()
-    # src_data = np.array(fg.src_b.data())
-    # dec_data = np.array(fg.dec_b.data())
+    src_data = np.array(fg.src_b.data())
+    enc_data = np.array(fg.enc_b.data())
+    dec_data = np.array(fg.dec_b.data())
 
-    print(fg.src_b.data())
-    print(fg.enc_b.data())
-    # print(fg.dec_b.data())
-    # print(src_data - dec_data)
-    # print(src_data[:100] == dec_data[:100])
-    # print(dec_data.reshape(-1,8)[:15,:])
-    # print(src_data.shape)
-    # print(dec_data.shape)
+    print(np.packbits(src_data))
+    print(np.packbits(enc_data))
+    print(np.packbits(dec_data))
+
     return True
 
 if __name__ == "__main__":
