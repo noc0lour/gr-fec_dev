@@ -14,7 +14,12 @@
 #include <gnuradio/fec_dev/turbo_decoder.h>
 #include <map>
 #include <string>
-#include <aff3ct.hpp>
+#include "Module/Encoder/RSC/Encoder_RSC_generic_sys.hpp"
+#include "Tools/Interleaver/Interleaver_core.hpp"
+#include "Tools/Interleaver/LTE/Interleaver_core_LTE.hpp"
+#include "Module/Decoder/RSC/BCJR/Seq/Decoder_RSC_BCJR_seq_fast.hpp"
+#include "Module/Decoder/Turbo/Decoder_turbo.hpp"
+#include "Module/Decoder/Turbo/Decoder_turbo_fast.hpp"
 
 namespace gr {
 namespace fec_dev {

@@ -9,9 +9,12 @@
 #define INCLUDED_FEC_DEV_TURBO_ENCODER_IMPL_H
 
 #include <gnuradio/fec_dev/turbo_encoder.h>
-#include <aff3ct.hpp>
 #include <map>
 #include <string>
+#include "Module/Encoder/RSC/Encoder_RSC_generic_sys.hpp"
+#include "Tools/Interleaver/Interleaver_core.hpp"
+#include "Tools/Interleaver/LTE/Interleaver_core_LTE.hpp"
+#include "Module/Encoder/Turbo/Encoder_turbo.hpp"
 
 namespace gr {
 namespace fec_dev {
