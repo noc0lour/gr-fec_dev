@@ -86,24 +86,27 @@ double turbo_decoder_impl::rate() { return d_frame_size / d_input_size; }
 void turbo_decoder_impl::generic_work(const void* inbuffer, void* outbuffer)
 {
     const float* in = (const float*)inbuffer;
-    int* out = (int*)outbuffer;
+    B_8* out = (B_8*)outbuffer;
 
     aff3ct::tools::Interleaver_core_LTE<> core(d_frame_size);
-    aff3ct::module::Interleaver<float> pi(core);
+    aff3ct::module::Interleaver<Q_8> pi(core);
 
     int N_rsc = 2 * (d_frame_size+std::log2(d_trellis_size));
-    auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<>(d_frame_size, N_rsc, true, {013, 015});
+    auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<B_8>(d_frame_size, N_rsc, true, {013, 015});
     auto enco_i = enco_n;
 
     auto trellis_n = enco_n.get_trellis();
     auto trellis_i = trellis_n;
-    
-    auto dec_n = aff3ct::module::Decoder_RSC_BCJR_seq_fast<>(d_frame_size, trellis_n, d_buffered);
-    auto dec_i = aff3ct::module::Decoder_RSC_BCJR_seq_fast<>(d_frame_size, trellis_i, d_buffered);
 
-    auto decoder = std::unique_ptr<aff3ct::module::Decoder_turbo_fast<>>(new aff3ct::module::Decoder_turbo_fast<>(d_frame_size, d_input_size, d_n_iterations, dec_n, dec_i, pi, d_buffered));
-    decoder->decode_siho(in, out, -1);
-    std::cout << "decoded" << std::endl;
+    auto my_quant_input =  std::vector<Q_8>(d_input_size);
+    auto quant = aff3ct::module::Quantizer<float,Q_8>(d_input_size);
+    quant.process(in, my_quant_input.data());
+    
+    auto dec_n = aff3ct::module::Decoder_RSC_BCJR_seq_fast<B_8, Q_8>(d_frame_size, trellis_n, d_buffered);
+    auto dec_i = aff3ct::module::Decoder_RSC_BCJR_seq_fast<B_8, Q_8>(d_frame_size, trellis_i, d_buffered);
+
+    auto decoder = std::unique_ptr<aff3ct::module::Decoder_turbo_fast<B_8, Q_8>>(new aff3ct::module::Decoder_turbo_fast<B_8, Q_8>(d_frame_size, d_input_size, d_n_iterations, dec_n, dec_i, pi, d_buffered));
+    decoder->decode_siho(my_quant_input.data(), out, -1);
 }
 
 } /* namespace fec */
