@@ -36,7 +36,6 @@ private:
     unsigned int d_frame_size;
     int d_input_size;
     int d_trellis_size;
-    std::shared_ptr<aff3ct::tools::Interleaver_core<>> d_interleaver_core;
     std::unique_ptr<aff3ct::module::Decoder_turbo<>> d_decoder;
 
 public:
