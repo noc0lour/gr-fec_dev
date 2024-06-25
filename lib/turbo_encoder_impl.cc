@@ -45,21 +45,13 @@ fec::generic_encoder::sptr turbo_encoder::make(int frame_size,
         int N_rsc = 2 * (frame_size+std::log2(trellis_size));
         auto enco_n = aff3ct::module::Encoder_RSC_generic_sys<B_8>(frame_size, N_rsc, buffered, polys);
         auto enco_i = enco_n;
+
+        // auto trellis = enco_n.get_trellis();
         
         d_interleaver_core = std::make_unique<aff3ct::tools::Interleaver_core_LTE<>>(frame_size);
         d_pi = std::make_unique<aff3ct::module::Interleaver<B_8>>(*d_interleaver_core);
 
-        std::cout << "Creating d_encoder" << std::endl;
         d_encoder = std::make_unique<aff3ct::module::Encoder_turbo<B_8>>(frame_size, d_output_size, enco_n, enco_i, *d_pi);
-        std::cout << "d_encoder created successfully" << std::endl;
-
-        // Call a method to verify initialization
-        try {
-            std::cout << "Encoder tail_length: " << d_encoder->tail_length() << std::endl;
-        }
-        catch (const std::exception &e) {
-            std::cerr << "Exception during method call: " << e.what() << std::endl;
-        }
 }
 
 /*
@@ -97,7 +89,6 @@ void turbo_encoder_impl::generic_work(const void* inbuffer, void* outbuffer)
     signed char* out = (signed char*)outbuffer;
 
     d_encoder->encode(in, out);
-    std::cout << "encoded" << std::endl;
 }
 
 } /* namespace fec_dev */

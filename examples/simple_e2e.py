@@ -17,10 +17,11 @@ class simple_fg(gr.top_block):
         gr.top_block.__init__(self, "simple turbo encoder/decoder example", catch_exceptions=True)
 
         samp_rate = 32e3
-        frame_size = 48
         puncpat = '11'
+        vector = list(bytes.fromhex('4848500301164607407819311081044c23cb52000000'))
+        frame_size = len(vector)
 
-        self.source = blocks.vector_source_b(2*(frame_size//15)*[0, 0, 1, 0, 3, 0, 7, 0, 15, 0, 31, 0, 63, 0, 127], False, 1, [])
+        self.source = blocks.vector_source_b(vector, False, 1, [])
         self.throttle = blocks.throttle( gr.sizeof_char*1, samp_rate, True, 0 if "auto" == "auto" else max( int(float(0.1) * samp_rate) if "auto" == "time" else int(0.1), 1) )
         self.unpack = blocks.unpack_k_bits_bb(8)
         self.enc_turbo = enc_turbo = fec_dev.turbo_encoder.make(frame_size * 8)
@@ -29,7 +30,7 @@ class simple_fg(gr.top_block):
         self.mapper = digital.constellation_encoder_bc(constellation)
         self.dec_turbo = dec_turbo = fec_dev.turbo_decoder.make(frame_size * 8)
         self.fec_decoder = fec.extended_decoder(dec_turbo, threading= None, puncpat=puncpat, integration_period=10000)
-        self.char_to_float = blocks.char_to_float(1,1)
+        # self.char_to_float = blocks.char_to_float(1,1)
         self.complex_to_real = blocks.complex_to_real(1)
         self.multiply = blocks.multiply_const_ff(-1)
 
@@ -55,13 +56,19 @@ def main():
     fg = simple_fg()
     fg.start()
     fg.wait()
-    src_data = np.array(fg.src_b.data())
+    # src_data = np.array(fg.src_b.data())
     enc_data = np.array(fg.enc_b.data())
-    dec_data = np.array(fg.dec_b.data())
+    # dec_data = np.array(fg.dec_b.data())
 
-    print(np.packbits(src_data))
-    print(np.packbits(enc_data))
-    print(np.packbits(dec_data))
+    print('unpacked')
+    # print(f'src: {src_data}')
+    print(f'enc: {enc_data}')
+    # print(f'dec: {dec_data}')
+
+    print('\npacked')
+    # print(f'src: {np.packbits(src_data)}')
+    print(f'enc: {np.packbits(enc_data)}')
+    # print(f'dec: {np.packbits(dec_data)}')
 
     return True
 
