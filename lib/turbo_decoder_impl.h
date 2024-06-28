@@ -40,9 +40,9 @@ private:
     unsigned int d_frame_size;
     int d_input_size;
     int d_trellis_size;
-    std::unique_ptr<aff3ct::module::Decoder_turbo<B_8, Q_8>> d_decoder;
+    std::unique_ptr<aff3ct::module::Decoder_turbo<int, float>> d_decoder;
     std::unique_ptr<aff3ct::tools::Interleaver_core_LTE<>> d_interleaver_core;
-    std::unique_ptr<aff3ct::module::Interleaver<B_8>> d_pi;
+    std::unique_ptr<aff3ct::module::Interleaver<float>> d_pi;
 
 public:
     turbo_decoder_impl(int frame_size,
